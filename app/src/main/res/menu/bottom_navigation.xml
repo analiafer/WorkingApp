@@ -3,16 +3,16 @@
     <item
         android:id="@+id/option_celendar"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:icon="@drawable/ic_calendar"
         android:title="@string/calendario"/>
     <item
         android:id="@+id/option_delete"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_delete_24"
+        android:icon="@drawable/ic_delete"
         android:title="@string/eliminar"/>
     <item
         android:id="@+id/option_settings"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_settings_24"
+        android:icon="@drawable/ic_settings"
         android:title="@string/configuraci_n"/>
 </menu>
