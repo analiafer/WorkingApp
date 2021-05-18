@@ -6,7 +6,7 @@ import android.os.Bundle
 class ViewTicketActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_viewticket)
+        setContentView(R.layout.activity_view_ticket)
 
 
 
