@@ -6,259 +6,103 @@
     android:layout_height="match_parent"
     android:background="@color/background_app">
 
-    <View
-        android:id="@+id/backgroundTopToolbar"
-        android:layout_width="412dp"
-        android:layout_height="120dp"
-        android:background="@color/background_toolbar_top"
-        app:layout_constraintBottom_toTopOf="@+id/lineTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
-
-    <View
-        android:id="@+id/backgroundBottomToolbar"
-        android:layout_width="414dp"
-        android:layout_height="61dp"
-        android:background="@color/background_toolbar_bottom"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbTicketView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2180F3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textTicketView"
-        android:layout_width="384dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="70dp"
-        android:background="@drawable/border_radius_background_ticket"
-        android:text="@string/descripcion_del_ticket"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundTopToolbar" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lineTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="59dp" />
-
-    <TextView
-        android:id="@+id/textTicket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/text_ticket"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundTopToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonClose"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="@+id/backgroundTopToolbar"
-        app:layout_constraintTop_toTopOf="@+id/lineTop"
-        app:layout_constraintVertical_bias="0.10" />
-
-    <ImageButton
-        android:id="@+id/imageBackArrow"
-        android:layout_width="67dp"
-        android:layout_height="53dp"
-        android:contentDescription="@string/imagen_de_la_flecha_hacia_atras"
-        app:layout_constraintBottom_toTopOf="@+id/lineTop"
-        app:layout_constraintEnd_toStartOf="@+id/lineBackArrow"
-        app:layout_constraintStart_toStartOf="@+id/backgroundTopToolbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lineBackArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="100dp" />
+        <ImageButton
+            android:id="@+id/imageBackArrow"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/imagen_de_la_flecha_hacia_atras"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/abc_vector_test"
+            tools:layout_editor_absoluteX="33dp" />
 
-    <ImageButton
-        android:id="@+id/buttonClose"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/border_radius_background_icon_top"
-        android:contentDescription="@string/icono_para_cerrar_ticket"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundTopToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonRemove"
-        app:layout_constraintTop_toTopOf="@+id/lineTop"
-        app:layout_constraintVertical_bias="0.50"
-        app:srcCompat="@drawable/ic_baseline_close_24"
-        tools:ignore="VectorDrawableCompat" />
+        <TextView
+            android:id="@+id/textTituloAplicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
 
-    <ImageButton
-        android:id="@+id/buttonRemove"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/border_radius_background_icon_top"
-        android:contentDescription="@string/icono_para_borrar_ticket"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundTopToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
-        app:layout_constraintTop_toTopOf="@+id/lineTop"
-        app:layout_constraintVertical_bias="0.50"
-        app:srcCompat="@drawable/ic_baseline_delete_24"
-        tools:ignore="VectorDrawableCompat" />
+    </androidx.appcompat.widget.Toolbar>
 
-    <ImageButton
-        android:id="@+id/buttonEdit"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/border_radius_background_icon_top"
-        android:contentDescription="@string/icono_para_editar_ticket"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundTopToolbar"
+    <View
+        android:id="@+id/backgroundTextTicket"
+        android:layout_width="390dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border_radius_background_ticket"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lineTop"
-        app:layout_constraintVertical_bias="0.50"
-        app:srcCompat="@drawable/ic_baseline_edit_24"
-        tools:ignore="VectorDrawableCompat" />
-
-    <TextView
-        android:id="@+id/textNameApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:text="@string/workingapp"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/lineTop"
-        app:layout_constraintStart_toStartOf="@+id/lineBackArrow"
-        app:layout_constraintTop_toTopOf="@+id/backgroundTopToolbar"
-        app:layout_constraintVertical_bias="0.50" />
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbTicketView" />
 
     <TextView
         android:id="@+id/textTituloTicket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/titulo_ticket"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="@+id/textTicketView"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="@+id/textTicketView"
-        app:layout_constraintTop_toTopOf="@+id/textTicketView" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/backgroundTextTicket"
+        app:layout_constraintTop_toTopOf="@+id/backgroundTextTicket" />
+
+
+    <TextView
+        android:id="@+id/textDescripcionTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/descripcion_del_ticket"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/backgroundTextTicket"
+        app:layout_constraintTop_toBottomOf="@+id/textTituloTicket" />
 
     <TextView
         android:id="@+id/textNombreAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/autor"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textTicketView"
-        app:layout_constraintEnd_toEndOf="@+id/textTicketView"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="@+id/textTicketView" />
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundTextTicket"
+        app:layout_constraintStart_toStartOf="@+id/backgroundTextTicket" />
 
     <TextView
         android:id="@+id/textDateTicket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="230dp"
+        android:layout_marginLeft="230dp"
         android:layout_marginBottom="8dp"
         android:text="23/05/2021"
-        app:layout_constraintBottom_toBottomOf="@+id/textTicketView"
-        app:layout_constraintEnd_toEndOf="@+id/textTicketView"
-        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundTextTicket"
         app:layout_constraintStart_toEndOf="@+id/textNombreAutor" />
 
-    <ImageButton
-        android:id="@+id/buttonCalendarioToolbar"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomTicketOption"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textOpcionCalendarioToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonTicketsToolbar"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_baseline_calendar_today_24"
-        tools:ignore="VectorDrawableCompat"
-        android:contentDescription="@string/icono_de_calendario" />
-
-    <ImageButton
-        android:id="@+id/buttonTicketsToolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textOpcionTicketToolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_baseline_notes_24"
-        android:contentDescription="@string/icono_de_tickets"
-        tools:ignore="VectorDrawableCompat" />
-
-    <ImageButton
-        android:id="@+id/buttonHerramientasToolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/textOpcionHerramientasToolbar"
-        app:layout_constraintEnd_toEndOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toEndOf="@+id/buttonTicketsToolbar"
-        app:layout_constraintTop_toTopOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_baseline_miscellaneous_services_24"
-        android:contentDescription="@string/icono_de_herramientas"
-        tools:ignore="VectorDrawableCompat" />
-
-    <TextView
-        android:id="@+id/textOpcionCalendarioToolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calendario"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/textOpcionTicketToolbar"
-        app:layout_constraintStart_toStartOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintTop_toTopOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintVertical_bias="0.75" />
-
-    <TextView
-        android:id="@+id/textOpcionTicketToolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tickets"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintTop_toTopOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintVertical_bias="0.75" />
-
-    <TextView
-        android:id="@+id/textOpcionHerramientasToolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/herramientas"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textOpcionTicketToolbar"
-        app:layout_constraintTop_toTopOf="@+id/backgroundBottomToolbar"
-        app:layout_constraintVertical_bias="0.75" />
-
+        android:background="@color/background_navigation"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_ticket_option"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
