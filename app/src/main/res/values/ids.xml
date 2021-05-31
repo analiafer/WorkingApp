@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tb_ticket" type="id">@+id/tb_ticket</item>
+    <item name="cardView" type="id">@+id/cardView</item>
+    <item name="tv_dateTicket" type="id">@+id/tv_dateTicket</item>
+    <item name="tv_tituloTicket" type="id">@+id/tv_tituloTicket</item>
+    <item name="tv_autorTicket" type="id">@+id/tv_autorTicket</item>
+    <item name="tv_cuerpoTicket" type="id">@+id/tv_cuerpoTicket</item>
+    <item name="btn_addTicket" type="id">@+id/btn_addTicket</item>
+    <item name="bottom_navigation" type="id">@+id/bottom_navigation</item>
+</resources>
