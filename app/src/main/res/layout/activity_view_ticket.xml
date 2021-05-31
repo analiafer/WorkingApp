@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <ImageButton
-            android:id="@+id/imageBackArrow"
+            android:id="@+id/buttonBackArrow"
             android:layout_width="65dp"
             android:layout_height="50dp"
             android:contentDescription="@string/imagen_de_la_flecha_hacia_atras"

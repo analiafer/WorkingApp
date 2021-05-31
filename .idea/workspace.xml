@@ -24,27 +24,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Se creo la pantalla al ver un ticket.&#10;La pantalla aún no tiene comportamientos.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cancel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_edit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_ticket_option.xml" afterDir="false" />
+    <list default="true" id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización.">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_2_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/WorkingApp.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/WorkingApp.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/border_radius_background_icon_top.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_close_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_delete_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_edit_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_miscellaneous_services_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_notes_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/ViewTicketActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/ViewTicketActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_ticket.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_ticket.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +93,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/menu" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="emulator" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -118,7 +112,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="WorkingApp.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -181,7 +175,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6ca88be-f5df-403b-b34b-1b66953dc540" name="Default Changelist" comment="" />
+      <changelist id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización." />
       <created>1621279123273</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -201,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621374367434</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización.">
+      <created>1622431331196</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622431331196</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +220,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer Commit" />
     <MESSAGE value="Se creo la pantalla al ver un ticket.&#10;La pantalla aún no tiene comportamientos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creo la pantalla al ver un ticket.&#10;La pantalla aún no tiene comportamientos." />
+    <MESSAGE value="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización." />
   </component>
   <component name="WindowStateProjectService">
     <state x="577" y="281" key="#Custom_Plugin_Repositories" timestamp="1622412381862">
@@ -234,6 +236,10 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="410" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.768@0.0.1360.768" timestamp="1621357739822" />
+    <state x="92" y="92" width="1176" height="584" key="AVDManager" timestamp="1622434536788">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state x="92" y="92" width="1176" height="584" key="AVDManager/0.0.1360.768@0.0.1360.768" timestamp="1622434536788" />
     <state x="260" y="138" key="AndroidCreateResourceDirectoryDialog" timestamp="1622408163703">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
@@ -250,10 +256,10 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="460" y="138" key="FileChooserDialogImpl/0.0.1360.768@0.0.1360.768" timestamp="1621366400734" />
-    <state x="181" y="28" key="SettingsEditor" timestamp="1622412423384">
+    <state x="181" y="28" key="SettingsEditor" timestamp="1622434088629">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
-    <state x="181" y="28" key="SettingsEditor/0.0.1360.768@0.0.1360.768" timestamp="1622412423384" />
+    <state x="181" y="28" key="SettingsEditor/0.0.1360.768@0.0.1360.768" timestamp="1622434088629" />
     <state x="272" y="112" key="Vcs.Push.Dialog.v2" timestamp="1621374419058">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
