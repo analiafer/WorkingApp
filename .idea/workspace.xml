@@ -24,21 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización.">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/WorkingApp.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/WorkingApp.app.iml" afterDir="false" />
+    <list default="true" id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Ya se puede ir a la pantalla del ticket y volver atrás.&#10;Falta mejorar el contenido del ticket en la visualización.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/ViewTicketActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workingapp/ViewTicketActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_ticket.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_ticket.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622431331196</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ya se puede ir a la pantalla del ticket y volver atrás.&#10;Falta mejorar el contenido del ticket en la visualización.">
+      <created>1622434633950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1622434633950</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +215,8 @@
     <MESSAGE value="Primer Commit" />
     <MESSAGE value="Se creo la pantalla al ver un ticket.&#10;La pantalla aún no tiene comportamientos." />
     <MESSAGE value="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se cambiaron varios aspectos de la pantalla.&#10;La pantalla aún no tiene comportamiento.&#10;Falta mejorar el contenido del ticket en la visualización." />
+    <MESSAGE value="Ya se puede ir a la pantalla del ticket y volver atrás.&#10;Falta mejorar el contenido del ticket en la visualización." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya se puede ir a la pantalla del ticket y volver atrás.&#10;Falta mejorar el contenido del ticket en la visualización." />
   </component>
   <component name="WindowStateProjectService">
     <state x="577" y="281" key="#Custom_Plugin_Repositories" timestamp="1622412381862">
@@ -236,10 +231,10 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="410" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.768@0.0.1360.768" timestamp="1621357739822" />
-    <state x="92" y="92" width="1176" height="584" key="AVDManager" timestamp="1622434536788">
+    <state x="92" y="92" width="1176" height="584" key="AVDManager" timestamp="1622437553133">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
-    <state x="92" y="92" width="1176" height="584" key="AVDManager/0.0.1360.768@0.0.1360.768" timestamp="1622434536788" />
+    <state x="92" y="92" width="1176" height="584" key="AVDManager/0.0.1360.768@0.0.1360.768" timestamp="1622437553133" />
     <state x="260" y="138" key="AndroidCreateResourceDirectoryDialog" timestamp="1622408163703">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
@@ -264,6 +259,10 @@
       <screen x="0" y="0" width="1360" height="768" />
     </state>
     <state x="272" y="112" key="Vcs.Push.Dialog.v2/0.0.1360.768@0.0.1360.768" timestamp="1621374419058" />
+    <state x="382" y="192" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1622435312818">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state x="382" y="192" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1360.768@0.0.1360.768" timestamp="1622435312818" />
     <state x="487" y="293" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621379593924">
       <screen x="0" y="0" width="1360" height="768" />
     </state>
