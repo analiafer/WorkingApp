@@ -7,24 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tb_ticket"
-        android:background="#2180F3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-16dp"
-        app:title="Mis Tickets"
-        app:titleTextColor="#F4F4F4">
-
-    </androidx.appcompat.widget.Toolbar>
+    <include
+        layout="@layout/action_bar_toolbar">
+    </include>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="413dp"
+        android:layout_height="157dp"
         android:backgroundTint="#6500BCD4"
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
@@ -32,8 +22,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_ticket"
-        app:layout_constraintVertical_bias="0.017">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        tools:ignore="UnusedAttribute">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,18 +38,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textStyle="bold"
+                android:gravity="end"
                 android:text="@string/ejemplo_date"
-                android:gravity="end"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_tituloTicket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:textStyle="bold"
+                android:text="@string/ejemplo_titulo"
                 android:textColor="@color/black"
-                android:text="@string/ejemplo_titulo" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_autorTicket"
@@ -78,7 +69,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_addTicket"
         android:layout_width="wrap_content"
@@ -92,17 +82,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.834"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:focusable="true" />
+        android:focusable="true"
+        android:contentDescription="@string/todo" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="#D1CDCD"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation"
-        tools:layout_editor_absoluteX="0dp"
-        android:background="#D1CDCD"
-        app:labelVisibilityMode="selected"/>
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,31 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">WorkingApp</string>
     <string name="calendario">Calendario</string>
     <string name="eliminar">Eliminar</string>
     <string name="configuraci_n">Configuración</string>
     <string name="ejemplo_date">01/01/2021</string>
     <string name="ejemplo_titulo">TITULO DEL TICKET</string>
-    <string name="ejemplo_autor">Nombre del autor</string>
+    <string name="ejemplo_autor" tools:ignore="Typos">Nombre del autor</string>
     <string name="ejemplo_descripcion_ticket">Descripción del ticket</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="act_ciu">actualizado en</string>
+    <string name="temperatura">25</string>
+    <string name="grados">°C</string>
+    <string name="estado">Soleado</string>
+    <string name="temp_min">Min</string>
+    <string name="temp_max">Max</string>
+    <string name="amanecer">Amanecer</string>
+    <string name="hora_amanecer">5.30</string>
+    <string name="lluvia">Lluvia</string>
+    <string name="porc_lluvia">6%</string>
+    <string name="atardecer">Atardecer</string>
+    <string name="hora_atard">6.30</string>
+    <string name="humedad">Humedad</string>
+    <string name="v_humedad">50</string>
+    <string name="presion">Presion</string>
+    <string name="v_presion">1018</string>
+    <string name="vel_viento">Velocidad viento</string>
+    <string name="v_viento">18.5km</string>
+    <string name="buscar_ciu">Buscar ciudad</string>
+    <string name="todo">TODO</string>
 </resources>
