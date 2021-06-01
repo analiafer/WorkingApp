@@ -3,19 +3,26 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.workingapp.databinding.ActivityMainBinding
+import com.example.workingapp.databinding.ActivityCancelBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var bindingmain : ActivityMainBinding
+class CancelActivity : AppCompatActivity() {
+
+    private lateinit var bindingCancel : ActivityCancelBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingmain = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(bindingmain.root)
-        var navigationBottom = bindingmain.bottomNavigation
+        bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
+        setContentView(bindingCancel.root)
+        var appbarnav = bindingCancel.tbTicket
+        setSupportActionBar(appbarnav)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        var navigationBottom = bindingCancel.bottomNavigation
+
+        navigationBottom.selectedItemId = R.id.option_cancel
 
         navigationBottom.setOnNavigationItemSelectedListener{
-            item ->
+                item ->
             when(item.itemId) {
                 R.id.option_general-> {
                     optionGeneral()
@@ -42,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
     }
 
     private fun optionGeneral(){
@@ -68,6 +74,5 @@ class MainActivity : AppCompatActivity() {
         val cancel = Intent (this, CancelActivity::class.java)
         startActivity(cancel)
     }
+
 }
-
-

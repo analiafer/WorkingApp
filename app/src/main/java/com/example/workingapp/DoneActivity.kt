@@ -3,20 +3,27 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.workingapp.databinding.ActivityMainBinding
+import com.example.workingapp.databinding.ActivityDoneBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var bindingmain : ActivityMainBinding
+class DoneActivity : AppCompatActivity() {
+    private lateinit var bindingDone : ActivityDoneBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingmain = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(bindingmain.root)
-        var navigationBottom = bindingmain.bottomNavigation
+        bindingDone = ActivityDoneBinding.inflate(layoutInflater)
+        setContentView(bindingDone.root)
+        var appbarnav = bindingDone.tbTicket
+        setSupportActionBar(appbarnav)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        var navigationBottom = bindingDone.bottomNavigation
+
+        navigationBottom.selectedItemId = R.id.option_realizados
 
         navigationBottom.setOnNavigationItemSelectedListener{
-            item ->
+                item ->
             when(item.itemId) {
+
                 R.id.option_general-> {
                     optionGeneral()
                     true
@@ -42,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
     }
 
     private fun optionGeneral(){
@@ -50,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         val general = Intent (this, MainActivity::class.java)
         startActivity(general)
     }
+
 
     private fun optionRealizado(){
 
@@ -69,5 +76,3 @@ class MainActivity : AppCompatActivity() {
         startActivity(cancel)
     }
 }
-
-

@@ -5,20 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DoneActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_ticket"
         android:background="#2180F3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-16dp"
-        app:title="@string/app_name"
-        app:menu="@menu/appbar_top"
-        app:titleTextColor="#F4F4F4"
-        tools:ignore="NotSibling">
+        app:title="Tickets realizados"
+        app:titleTextColor="#F4F4F4">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -37,7 +36,6 @@
         app:layout_constraintVertical_bias="0.017">
 
         <LinearLayout
-            android:id="@+id/btnViewTicket"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:orientation="vertical"
@@ -80,23 +78,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_addTicket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:focusable="true"
-        android:contentDescription="TODO" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -106,6 +87,5 @@
         tools:layout_editor_absoluteX="0dp"
         android:background="#D1CDCD"
         app:labelVisibilityMode="selected"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
