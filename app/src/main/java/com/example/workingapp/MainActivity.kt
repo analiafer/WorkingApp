@@ -3,21 +3,35 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import com.example.workingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bindingmain : ActivityMainBinding
+    private lateinit var bindingmain: ActivityMainBinding
+    private lateinit var viewTicket: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingmain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingmain.root)
-        var navigationBottom = bindingmain.bottomNavigation
+        setViews()
+        setListener()
+    }
 
-        navigationBottom.setOnNavigationItemSelectedListener{
-            item ->
-            when(item.itemId) {
-                R.id.option_general-> {
+    private fun setViews() {
+        viewTicket = findViewById(R.id.viewTicket)
+    }
+
+    private fun setListener() {
+        viewTicket.setOnClickListener {
+            var intent = Intent(this, ViewTicketActivity::class.java)
+            startActivity(intent)
+        }
+
+        var navigationBottom = bindingmain.bottomNavigation
+        navigationBottom.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.option_general -> {
                     optionGeneral()
                     true
                 }
@@ -41,31 +55,29 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
-
     }
 
-    private fun optionGeneral(){
+    private fun optionGeneral() {
 
-        val general = Intent (this, MainActivity::class.java)
+        val general = Intent(this, MainActivity::class.java)
         startActivity(general)
     }
 
-    private fun optionRealizado(){
+    private fun optionRealizado() {
 
-        val realizado = Intent ( this, DoneActivity::class.java)
+        val realizado = Intent(this, DoneActivity::class.java)
         startActivity(realizado)
     }
 
-    private fun optionEnProceso(){
+    private fun optionEnProceso() {
 
-        val proceso = Intent (this, EnProcesoActivity::class.java)
+        val proceso = Intent(this, EnProcesoActivity::class.java)
         startActivity(proceso)
     }
 
-    private fun optionCancel(){
+    private fun optionCancel() {
 
-        val cancel = Intent (this, CancelActivity::class.java)
+        val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
 }
