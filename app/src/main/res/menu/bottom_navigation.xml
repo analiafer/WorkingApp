@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_general"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu"
+        android:title="@string/general" />
+    <item
+        android:id="@+id/option_realizados"
+        android:enabled="true"
+        android:icon="@drawable/ic_check_circle"
+        android:title="@string/realizados"/>
+    <item
+        android:id="@+id/option_enproceso"
+        android:enabled="true"
+        android:icon="@drawable/ic_hourglass"
+        android:title="@string/en_proceso"/>
+    <item
+        android:id="@+id/option_cancel"
+        android:enabled="true"
+        android:icon="@drawable/ic_cancel"
+        android:title="@string/cancelados"/>
+</menu>

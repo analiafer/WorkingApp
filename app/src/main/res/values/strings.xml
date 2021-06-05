@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">WorkingApp</string>
+    <string name="calendario">Calendario</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="configuraci_n">Configuración</string>
+    <string name="ejemplo_date">01/01/2021</string>
+    <string name="ejemplo_titulo">TITULO DEL TICKET</string>
+    <string name="ejemplo_autor">Nombre del autor</string>
+    <string name="ejemplo_descripcion_ticket">Descripción del ticket</string>
+    <string name="clima">Clima</string>
+    <string name="realizados">Realizados</string>
+    <string name="en_proceso">En proceso</string>
+    <string name="cancelados">Cancelados</string>
+    <string name="general">General</string>
 </resources>
