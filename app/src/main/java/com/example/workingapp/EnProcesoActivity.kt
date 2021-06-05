@@ -3,19 +3,25 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.workingapp.databinding.ActivityMainBinding
+import com.example.workingapp.databinding.ActivityEnProcesoBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var bindingmain : ActivityMainBinding
+class EnProcesoActivity : AppCompatActivity() {
+    private lateinit var bindingProceso : ActivityEnProcesoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingmain = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(bindingmain.root)
-        var navigationBottom = bindingmain.bottomNavigation
+        bindingProceso = ActivityEnProcesoBinding.inflate(layoutInflater)
+        setContentView(bindingProceso.root)
+        var appbarnav = bindingProceso.tbTicket
+        setSupportActionBar(appbarnav)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        var navigationBottom = bindingProceso.bottomNavigation
+
+        navigationBottom.selectedItemId = R.id.option_enproceso
 
         navigationBottom.setOnNavigationItemSelectedListener{
-            item ->
+                item ->
             when(item.itemId) {
                 R.id.option_general-> {
                     optionGeneral()
@@ -41,8 +47,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
-
     }
 
     private fun optionGeneral(){
@@ -69,5 +73,3 @@ class MainActivity : AppCompatActivity() {
         startActivity(cancel)
     }
 }
-
-
