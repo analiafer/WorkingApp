@@ -3,10 +3,12 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import com.example.workingapp.databinding.ActivityDoneBinding
 
 class DoneActivity : AppCompatActivity() {
-    private lateinit var bindingDone : ActivityDoneBinding
+    private lateinit var bindingDone: ActivityDoneBinding
+    private lateinit var viewTicket: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,16 +17,26 @@ class DoneActivity : AppCompatActivity() {
         var appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setViews()
+        setListener()
+    }
 
-        var navigationBottom = bindingDone.bottomNavigation
+    private fun setViews() {
+        viewTicket = findViewById(R.id.viewTicket)
+    }
 
+    private fun setListener() {
+        viewTicket.setOnClickListener {
+            var intent = Intent(this, ViewTicketActivity::class.java)
+            startActivity(intent)
+        }
+
+        val navigationBottom = bindingDone.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_realizados
+        navigationBottom.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
 
-        navigationBottom.setOnNavigationItemSelectedListener{
-                item ->
-            when(item.itemId) {
-
-                R.id.option_general-> {
+                R.id.option_general -> {
                     optionGeneral()
                     true
                 }
@@ -48,31 +60,30 @@ class DoneActivity : AppCompatActivity() {
             }
 
         }
-
     }
 
-    private fun optionGeneral(){
+    private fun optionGeneral() {
 
-        val general = Intent (this, MainActivity::class.java)
+        val general = Intent(this, MainActivity::class.java)
         startActivity(general)
     }
 
 
-    private fun optionRealizado(){
+    private fun optionRealizado() {
 
-        val realizado = Intent ( this, DoneActivity::class.java)
+        val realizado = Intent(this, DoneActivity::class.java)
         startActivity(realizado)
     }
 
-    private fun optionEnProceso(){
+    private fun optionEnProceso() {
 
-        val proceso = Intent (this, EnProcesoActivity::class.java)
+        val proceso = Intent(this, EnProcesoActivity::class.java)
         startActivity(proceso)
     }
 
-    private fun optionCancel(){
+    private fun optionCancel() {
 
-        val cancel = Intent (this, CancelActivity::class.java)
+        val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
 }
