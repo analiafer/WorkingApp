@@ -11,6 +11,7 @@
         android:theme="@style/Theme.WorkingApp">
         <activity android:name=".ViewTicketActivity"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".sumar"></activity>
         <activity android:name=".EnProcesoActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".CancelActivity"
