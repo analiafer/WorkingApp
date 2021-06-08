@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".sumar">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_ticket"
+        android:background="#2180F3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp"
+        app:title="Tickets Nuevos"
+        app:menu="@menu/appbar_top"
+        app:titleTextColor="#F4F4F4"
+        tools:ignore="NotSibling">
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:id="@+id/tvSumar"
@@ -68,5 +83,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
