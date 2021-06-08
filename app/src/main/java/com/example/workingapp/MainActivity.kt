@@ -43,8 +43,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-    }
 
+
+    }
+    
     private fun optionGeneral(){
 
         val general = Intent (this, MainActivity::class.java)
