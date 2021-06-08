@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,12 +24,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Se pueden cambiar las pantallas (Estados de los tickets)&#10;Se puede volver para atrás en todas las pantallas.&#10;Se puede acceder al ticket.&#10;Se agregaron botones de editar, borrar y cerrar.&#10;Se cambiaron colores." />
+    <list default="true" id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Ya se puede ir a la pantalla del ticket y volver atrás.&#10;Falta mejorar el contenido del ticket en la visualización.">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_agregar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_agregar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_ticket.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_ticket.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_ticket.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_ticket.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -33,8 +49,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1tgH6xBfry6yw7vPYnLgYADywqt" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -44,7 +69,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="WorkingApp.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -106,9 +131,43 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25c38e38-4f28-4861-9d39-6240c2afb2cc" name="Default Changelist" comment="Ya se puede ir a la pantalla del ticket y volver atrás.&#10;Falta mejorar el contenido del ticket en la visualización." />
+      <created>1623183641439</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623183641439</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1317" height="185" key="GridCell.Tab.0.bottom" timestamp="1623184080628">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="185" key="GridCell.Tab.0.bottom/0.0.1360.768@0.0.1360.768" timestamp="1623184080628" />
+    <state width="1317" height="185" key="GridCell.Tab.0.center" timestamp="1623184080628">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="185" key="GridCell.Tab.0.center/0.0.1360.768@0.0.1360.768" timestamp="1623184080628" />
+    <state width="1317" height="185" key="GridCell.Tab.0.left" timestamp="1623184080628">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="185" key="GridCell.Tab.0.left/0.0.1360.768@0.0.1360.768" timestamp="1623184080628" />
+    <state width="1317" height="185" key="GridCell.Tab.0.right" timestamp="1623184080628">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="185" key="GridCell.Tab.0.right/0.0.1360.768@0.0.1360.768" timestamp="1623184080628" />
   </component>
 </project>
