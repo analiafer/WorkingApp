@@ -3,15 +3,29 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.example.workingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bindingmain : ActivityMainBinding
 
+    /* boton para agregar ticket Ari*/
+    lateinit var btn_addTicket: Button
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingmain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingmain.root)
+
+        /* boton para agregar ticket Ari*/
+        btn_addTicket = findViewById(R.id.btn_addTicket)
+        btn_addTicket.setOnClickListener {
+            val intent = Intent(this, sumar::class.java)
+            startActivity(intent)
+        }
+
+
         var navigationBottom = bindingmain.bottomNavigation
 
         navigationBottom.setOnNavigationItemSelectedListener{

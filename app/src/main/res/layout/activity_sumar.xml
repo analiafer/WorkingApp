@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:text="Agregue un Ticket"
+        android:text="Añadir Ticket"
         android:textColor="#2180F3"
         android:textSize="32sp"
         android:textStyle="bold"
