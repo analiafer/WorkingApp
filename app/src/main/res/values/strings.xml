@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">WorkingApp</string>
+    <string name="imagen_de_la_flecha_hacia_atras">Imagen de la flecha hacia atras</string>
+    <string name="text_ticket">Ticket</string>
+    <string name="optionCloseTicket">Cerrar</string>
+    <string name="optionDeleteTicket">Borrar</string>
+    <string name="optionEditTicket">Editar</string>
+    <string name="descripcion_del_ticket">Descripcion del ticket</string>
+    <string name="titulo_ticket">Titulo Ticket</string>
     <string name="calendario">Calendario</string>
+    <string name="tickets">Tickets</string>
+    <string name="herramientas">Herramientas</string>
+    <string name="autor">Autor</string>
+    <string name="workingapp">WorkingApp</string>
+    <string name="icono_de_calendario">Icono de calendario</string>
+    <string name="icono_de_tickets">Icono de tickets</string>
+    <string name="icono_de_herramientas">Icono de herramientas</string>
     <string name="eliminar">Eliminar</string>
     <string name="configuraci_n">Configuración</string>
     <string name="ejemplo_date">01/01/2021</string>
