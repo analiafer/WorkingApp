@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         /* boton para agregar ticket Ari*/
         btn_addTicket = findViewById(R.id.btn_addTicket)
         btn_addTicket.setOnClickListener {
-            val intent = Intent(this, sumar::class.java)
+            val intent = Intent(this, Sumar::class.java)
             startActivity(intent)
         }
 
