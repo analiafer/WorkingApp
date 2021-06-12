@@ -8,7 +8,6 @@ import com.example.workingapp.databinding.ActivityEnProcesoBinding
 
 class EnProcesoActivity : AppCompatActivity() {
     private lateinit var bindingProceso: ActivityEnProcesoBinding
-    private lateinit var viewTicket: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,19 +15,12 @@ class EnProcesoActivity : AppCompatActivity() {
         setContentView(bindingProceso.root)
         var appbarnav = bindingProceso.tbTicket
         setSupportActionBar(appbarnav)
-
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
         setListener()
     }
 
-    private fun setViews() {
-        viewTicket = findViewById(R.id.viewTicket)
-    }
-
     private fun setListener() {
-        viewTicket.setOnClickListener {
+        bindingProceso.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
         }

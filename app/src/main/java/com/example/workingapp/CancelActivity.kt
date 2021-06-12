@@ -9,7 +9,6 @@ import com.example.workingapp.databinding.ActivityCancelBinding
 class CancelActivity : AppCompatActivity() {
 
     private lateinit var bindingCancel: ActivityCancelBinding
-    private lateinit var viewTicket: LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
@@ -17,16 +16,11 @@ class CancelActivity : AppCompatActivity() {
         var appbarnav = bindingCancel.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
         setListener()
     }
 
-    private fun setViews() {
-        viewTicket = findViewById(R.id.viewTicket)
-    }
-
     private fun setListener() {
-        viewTicket.setOnClickListener {
+        bindingCancel.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
         }
@@ -85,5 +79,4 @@ class CancelActivity : AppCompatActivity() {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
-
 }

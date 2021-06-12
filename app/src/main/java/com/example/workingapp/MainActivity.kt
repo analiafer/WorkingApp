@@ -8,15 +8,13 @@ import android.widget.LinearLayout
 import com.example.workingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bindingmain: ActivityMainBinding
-    private lateinit var viewTicket: LinearLayout
+    private lateinit var bindingMain: ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingmain = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(bindingmain.root)
-        setViews()
+        bindingMain = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(bindingMain.root)
         setListener()
 
         /*boton Ari para ir al nuevo ticket*/
@@ -27,17 +25,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setViews() {
-        viewTicket = findViewById(R.id.viewTicket)
-    }
-
     private fun setListener() {
-        viewTicket.setOnClickListener {
+        bindingMain.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
         }
 
-        var navigationBottom = bindingmain.bottomNavigation
+        var navigationBottom = bindingMain.bottomNavigation
         navigationBottom.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.option_general -> {
