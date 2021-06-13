@@ -143,4 +143,3 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 .idea
 
-/app/src/main/java/com/example/workingapp/
