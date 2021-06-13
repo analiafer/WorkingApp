@@ -3,8 +3,6 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.LinearLayout
 import com.example.workingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,18 +14,18 @@ class MainActivity : AppCompatActivity() {
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMain.root)
         setListener()
-
-        /*boton Ari para ir al nuevo ticket*/
-        bindingmain.btnAddTicket.setOnClickListener{
-            val intent = Intent(this, NewTicketActivity::class.java)
-            startActivity(intent)
-
-        }
     }
 
     private fun setListener() {
+        /*botón para ir al ticket*/
         bindingMain.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
+            startActivity(intent)
+        }
+
+        /*boton Ari para ir al nuevo ticket*/
+        bindingMain.btnAddTicket.setOnClickListener {
+            val intent = Intent(this, NewTicketActivity::class.java)
             startActivity(intent)
         }
 

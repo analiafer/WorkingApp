@@ -3,7 +3,6 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import com.example.workingapp.databinding.ActivityEnProcesoBinding
 
 class EnProcesoActivity : AppCompatActivity() {
