@@ -24,12 +24,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintTop_toBottomOf="@+id/tb_ticket"
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/row_ticket">
-        <!-- Si uso wrap_content, ocupa toda la pantalla-->
+
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
