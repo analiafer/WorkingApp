@@ -57,7 +57,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginBottom="8dp"
             android:text="23/05/2021"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
     </androidx.cardview.widget.CardView>
 
