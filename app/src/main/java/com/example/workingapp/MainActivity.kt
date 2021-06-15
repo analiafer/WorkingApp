@@ -8,7 +8,6 @@ import com.example.workingapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var bindingMain: ActivityMainBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
@@ -27,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         bindingMain.btnAddTicket.setOnClickListener {
             val intent = Intent(this, NewTicketActivity::class.java)
             startActivity(intent)
+        }
+
+        bindingMain.tbTicket.setOnMenuItemClickListener{ item ->
+            if (item.itemId==R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
+             super.onOptionsItemSelected(item)
         }
 
         var navigationBottom = bindingMain.bottomNavigation
