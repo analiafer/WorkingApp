@@ -4,21 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
-import com.google.android.material.bottomappbar.BottomAppBar
+import com.example.workingapp.databinding.ActivityViewTicketBinding
+
 
 class ViewTicketActivity : AppCompatActivity() {
-
-    lateinit var btnAppBar: BottomAppBar
+    private lateinit var bindingViewTicket: ActivityViewTicketBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_ticket)
-        setSupportActionBar(findViewById(R.id.tbTicketView))
+        bindingViewTicket = ActivityViewTicketBinding.inflate(layoutInflater)
+        setContentView(bindingViewTicket.root)
+        setSupportActionBar(bindingViewTicket.tbTicketView)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
-    }
-
-    private fun setViews() {
-        btnAppBar = findViewById(R.id.barTicketView)
     }
 
     // Sobre escribo el menú para que sea el que yo creé.

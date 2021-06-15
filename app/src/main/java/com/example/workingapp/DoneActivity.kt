@@ -8,7 +8,6 @@ import com.example.workingapp.databinding.ActivityDoneBinding
 
 class DoneActivity : AppCompatActivity() {
     private lateinit var bindingDone: ActivityDoneBinding
-    private lateinit var viewTicket: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,16 +16,11 @@ class DoneActivity : AppCompatActivity() {
         var appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
         setListener()
     }
 
-    private fun setViews() {
-        viewTicket = findViewById(R.id.viewTicket)
-    }
-
     private fun setListener() {
-        viewTicket.setOnClickListener {
+        bindingDone.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
         }
@@ -67,7 +61,6 @@ class DoneActivity : AppCompatActivity() {
         val general = Intent(this, MainActivity::class.java)
         startActivity(general)
     }
-
 
     private fun optionRealizado() {
 
