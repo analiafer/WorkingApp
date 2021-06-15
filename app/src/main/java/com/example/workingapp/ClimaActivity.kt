@@ -18,7 +18,7 @@ class ClimaActivity : AppCompatActivity() {
     private lateinit var bindingClima: ActivityClimaBinding
 
    private var accessKey: String ="7a9237f486a2764a3e71ad428f1987f0"
-   private var ciudad: String = "Londres"
+   private var ciudad: String = "London"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
