@@ -8,15 +8,17 @@
         android:id="@+id/backgroundTextTicket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
         android:backgroundTint="@color/background_description_ticket"
         app:cardCornerRadius="15dp"
-        android:layout_marginHorizontal="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbTicketView">
-
+        <!-- No sé como hacer para que la distancia sea igual de arriba que de abajo
+        quiero decir, si pongo margen de 5dp, se suma con el siguiente, pero
+        el margin de la de arriba de todo y la de abajo es sólo 5 y no 10 -->
         <TextView
             android:id="@+id/textTituloTicket"
             android:layout_width="wrap_content"
@@ -32,8 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="18dp"
-            android:layout_marginBottom="45dp"
             android:layout_marginTop="55dp"
+            android:layout_marginBottom="45dp"
             android:text="@string/descripcion_del_ticket"
             android:textSize="20sp" />
 
