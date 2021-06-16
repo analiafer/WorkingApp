@@ -59,10 +59,10 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
             }
 
         }
+
     }
 
     private fun optionGeneral() {
-
         val general = Intent(this, MainActivity::class.java)
         startActivity(general)
     }
