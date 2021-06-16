@@ -9,7 +9,7 @@ class API {
 
     private  fun getAPI(): climaAPI{
 
-        val baseUrl = "http://api.weatherstack.com/"
+        val baseUrl = "https://api.weatherstack.com/"
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
