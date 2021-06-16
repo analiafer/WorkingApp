@@ -86,10 +86,12 @@
         android:layout_width="152dp"
         android:layout_height="32dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="80dp"
         android:text="@string/estado"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintAmanecer"
         app:layout_constraintEnd_toEndOf="@+id/txtTemperatura"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="@+id/txtTemperatura"
@@ -100,9 +102,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4sp"
-        android:textSize="20sp"
+        android:layout_marginBottom="61dp"
         android:text="@string/temp_min"
         android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintAmanecer"
         app:layout_constraintStart_toStartOf="@+id/txtTemperatura"
         app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
 
@@ -111,9 +115,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textSize="20sp"
+        android:layout_marginBottom="61dp"
         android:text="@string/temp_max"
         android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintAmanecer"
         app:layout_constraintEnd_toEndOf="@+id/txtTemperatura"
         app:layout_constraintTop_toBottomOf="@+id/txtEstado" />
 
@@ -305,7 +311,7 @@
             app:layout_constraintEnd_toStartOf="@+id/txtHumedad"
             app:layout_constraintStart_toEndOf="@+id/imgHumedad"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtHumedad"
@@ -324,7 +330,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/txtAtardecer"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
 
         <ImageView
@@ -361,7 +367,7 @@
             app:layout_constraintStart_toEndOf="@+id/imgPresion"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.514"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
 
         <TextView
@@ -381,7 +387,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/txtHumedad"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/imgViento"
@@ -409,7 +415,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgViento"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/txtViento"
@@ -424,7 +430,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/txtLluvia"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
