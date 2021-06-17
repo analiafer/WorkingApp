@@ -35,14 +35,14 @@
     <string name="temp_max">Max</string>
     <string name="amanecer">Amanecer</string>
     <string name="hora_amanecer">5.30</string>
-    <string name="lluvia">Lluvia</string>
-    <string name="porc_lluvia">6%</string>
+    <string name="S_Termica">S. termica</string>
+    <string name="porc_lluvia">6</string>
     <string name="atardecer">Atardecer</string>
     <string name="hora_atard">6.30</string>
     <string name="humedad">Humedad</string>
     <string name="v_humedad">50</string>
     <string name="presion">Presion</string>
-    <string name="v_presion">1018</string>
+    <string name="v_presion">1</string>
     <string name="vel_viento">Velocidad viento</string>
     <string name="v_viento">18.5km</string>
 </resources>
