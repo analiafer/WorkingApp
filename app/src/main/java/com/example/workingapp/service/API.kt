@@ -9,7 +9,7 @@ class API {
 
     private  fun getAPI(): climaAPI{
 
-        val baseUrl = "http://api.weatherstack.com/"
+        val baseUrl = "http://api.openweathermap.org/data/2.5/"
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
@@ -17,8 +17,8 @@ class API {
         return retrofit.create(climaAPI::class.java)
     }
 
-    fun getCurrentWeatherData(accessKey: String, ciudad: String, callback: Callback<WeatherModel>) {
-        getAPI().getCurrentWeatherData(accessKey, ciudad).enqueue(callback)
+    fun getCurrentWeatherData(ciudad: String,accessKey: String, callback: Callback<WeatherModel>) {
+        getAPI().getCurrentWeatherData(ciudad, accessKey).enqueue(callback)
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.workingapp
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -11,14 +12,16 @@ import com.example.workingapp.service.API
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class ClimaActivity : AppCompatActivity() {
 
     private lateinit var bindingClima: ActivityClimaBinding
 
-   private var accessKey: String ="7a9237f486a2764a3e71ad428f1987f0"
-   private var ciudad: String = "London"
+   private var accessKey: String ="c0d4c0df755521b2be43fd8bf65f2791"
+   private var ciudad: String = "Buenos Aires"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,18 +36,25 @@ class ClimaActivity : AppCompatActivity() {
     }
 
     private fun getCurrentData() {
-        API().getCurrentWeatherData(accessKey, ciudad, object : Callback<WeatherModel> {
+        API().getCurrentWeatherData(ciudad, accessKey, object : Callback<WeatherModel> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call<WeatherModel>, response: Response<WeatherModel>) {
                 if (response.isSuccessful){
+                    Log.i("ClimaActivity", "Comienza el metodo getCurrentData")
                     response.body()!!.apply {
-                        bindingClima.txtCity.text = location.name
-                        bindingClima.txtTemperatura.text = current.temperature.toString()
-                        bindingClima.txtEstado.text = current.weatherDescriptions[0]
-                        bindingClima.txtViento.text = current.windSpeed.toString()
-                        bindingClima.txtHumedad.text = current.humidity.toString()
-                        bindingClima.txtPresion.text = current.pressure.toString()
-                        bindingClima.txtLluvia.text = current.precip.toString()
-                        bindingClima.txtActCiudad.text = location.localtime
+                        bindingClima.txtCity.text = this.name + ", " + this.sys.country
+                        bindingClima.txtTemperatura.text = this.main.temp.toLong().toString()
+                        bindingClima.txtTemperaturaMax.text = this.main.tempMax.toLong().toString() + "°"
+                        bindingClima.txtTemperaturaMin.text = this.main.tempMin.toLong().toString() + "°"
+                        bindingClima.txtEstado.text = this.weather[0].description
+                        bindingClima.txtViento.text = this.wind.speed.toString() + " km"
+                        bindingClima.txtHumedad.text =this.main.humidity.toString() + "%"
+                        bindingClima.txtPresion.text = this.main.pressure.toString()
+                        bindingClima.txtActCiudad.text =  SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(this.dt.toLong()*1000))
+                        bindingClima.txtAmanecer.text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(this.sys.sunset.toLong()*1000))
+                        bindingClima.txtAtardecer.text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(this.sys.sunrise.toLong()*1000))
+                        bindingClima.txtSTermica.text = this.main.feelsLike.toLong().toString() + "°"
+                        Log.i("ClimaActivity", "Respuesta del getCurrentData")
                     }
                 }else{
                     Toast.makeText(this@ClimaActivity, "Fallo con codigo ${response.code()}", Toast.LENGTH_LONG).show()
