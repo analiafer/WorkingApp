@@ -12,6 +12,7 @@ import com.example.workingapp.recyclerView.TicketAdapter
 class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
@@ -117,6 +118,8 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         var intent = Intent(this, ViewTicketActivity::class.java)
         startActivity(intent)
     }
+
+
 }
 
 
