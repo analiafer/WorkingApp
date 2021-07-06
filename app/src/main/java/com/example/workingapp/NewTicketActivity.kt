@@ -16,7 +16,7 @@ class NewTicketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingNewTicket = ActivityNewTicketBinding.inflate(layoutInflater)
         setContentView(bindingNewTicket.root)
-       viewModel = ViewModelProvider(this).get(TicketViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(TicketViewModel::class.java)
 
 
         setListeners()

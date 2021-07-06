@@ -25,5 +25,9 @@ class TicketViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    fun getAll(): LiveData<List<TicketEntity>> {
+        return getAll
+    }
+
 
 }
