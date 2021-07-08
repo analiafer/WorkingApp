@@ -175,7 +175,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/txtLluvia"
+            app:layout_constraintBottom_toTopOf="@+id/txtSTermica"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
@@ -205,7 +205,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginBottom="34dp"
             android:gravity="center_horizontal"
-            android:text="@string/lluvia"
+            android:text="@string/S_Termica"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -216,7 +216,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/txtLluvia"
+            android:id="@+id/txtSTermica"
             android:layout_width="48dp"
 
             android:layout_height="21dp"
@@ -291,7 +291,7 @@
             android:layout_marginRight="4dp"
             android:src="@drawable/humedad"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
-            app:layout_constraintStart_toEndOf="@+id/txtLluvia"
+            app:layout_constraintStart_toEndOf="@+id/txtSTermica"
             app:layout_constraintTop_toBottomOf="@+id/imgAtardecer"
             tools:ignore="MissingConstraints" />
 
@@ -427,7 +427,7 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/txtLluvia"
+            app:layout_constraintTop_toBottomOf="@+id/txtSTermica"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

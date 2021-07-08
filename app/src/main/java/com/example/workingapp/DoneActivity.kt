@@ -3,13 +3,17 @@ package com.example.workingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.example.workingapp.databinding.ActivityDoneBinding
 import com.example.workingapp.recyclerView.TicketAdapter
 
-class DoneActivity : AppCompatActivity()
-{
+
+
+class DoneActivity : AppCompatActivity() {
+
     private lateinit var bindingDone: ActivityDoneBinding
+    private lateinit var viewTicket: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,11 +22,26 @@ class DoneActivity : AppCompatActivity()
         var appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setViews()
         setListener()
+
+
+
+        /*Ari recycler
+        val recycler = findViewById<RecyclerView>(R.id.recycler)
+         recycler.adapter =*/
+    }
+
+    private fun setViews() {
+        viewTicket = findViewById(R.id.viewTicket)
 
     }
 
     private fun setListener() {
+        viewTicket.setOnClickListener {
+            var intent = Intent(this, ViewTicketActivity::class.java)
+            startActivity(intent)
+        }
 
         val navigationBottom = bindingDone.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_realizados
@@ -61,6 +80,7 @@ class DoneActivity : AppCompatActivity()
         startActivity(general)
     }
 
+
     private fun optionRealizado() {
 
         val realizado = Intent(this, DoneActivity::class.java)
@@ -79,5 +99,7 @@ class DoneActivity : AppCompatActivity()
         startActivity(cancel)
     }
 
+
 }
+
 
