@@ -1,9 +1,10 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
+import com.example.workingapp.data.TicketEntity
+import com.example.workingapp.model.Ticket
+import com.example.workingapp.model.TicketsReposotiry
 
 class TicketViewModel (private val repository: TicketsReposotiry) : ViewModel(){
 

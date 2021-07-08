@@ -1,4 +1,4 @@
-package com.example.workingapp
+package com.example.workingapp.model
 
 data class Ticket(
     val id : Long,

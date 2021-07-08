@@ -1,9 +1,10 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityNewTicketBinding
 
 class NewTicketActivity : AppCompatActivity() {
@@ -29,7 +30,7 @@ class NewTicketActivity : AppCompatActivity() {
             val contenido = bindingNewTicket.etDescripcion.text.toString()
 
             if(titulo.isEmpty() || autor.isEmpty() || contenido.isEmpty()){
-                Toast.makeText(this,R.string.toastInfoVacia, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toastInfoVacia, Toast.LENGTH_SHORT).show()
 
             }else{
                 vm.saveTicket(titulo, autor, contenido)

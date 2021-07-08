@@ -1,8 +1,9 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityEnProcesoBinding
 
 class EnProcesoActivity : AppCompatActivity() {

@@ -1,33 +1,33 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.workingapp.databinding.ActivityCancelBinding
+import com.example.workingapp.R
+import com.example.workingapp.databinding.ActivityDoneBinding
 
-class CancelActivity : AppCompatActivity() {
+class DoneActivity : AppCompatActivity()
+{
+    private lateinit var bindingDone: ActivityDoneBinding
 
-    private lateinit var bindingCancel: ActivityCancelBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
-        setContentView(bindingCancel.root)
-        var appbarnav = bindingCancel.tbTicket
+        bindingDone = ActivityDoneBinding.inflate(layoutInflater)
+        setContentView(bindingDone.root)
+        var appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setListener()
+
     }
 
     private fun setListener() {
-        bindingCancel.viewTicket.setOnClickListener {
-            var intent = Intent(this, ViewTicketActivity::class.java)
-            startActivity(intent)
-        }
 
-        val navigationBottom = bindingCancel.bottomNavigation
-        navigationBottom.selectedItemId = R.id.option_cancel
+        val navigationBottom = bindingDone.bottomNavigation
+        navigationBottom.selectedItemId = R.id.option_realizados
         navigationBottom.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
+
                 R.id.option_general -> {
                     optionGeneral()
                     true
@@ -52,7 +52,6 @@ class CancelActivity : AppCompatActivity() {
             }
 
         }
-
     }
 
     private fun optionGeneral() {
@@ -78,4 +77,6 @@ class CancelActivity : AppCompatActivity() {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
+
 }
+

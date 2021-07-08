@@ -1,4 +1,4 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,10 @@ import androidx.activity.viewModels
 import android.os.Bundle
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityMainBinding
-import com.example.workingapp.recyclerView.TicketAdapter
+import com.example.workingapp.ui.recyclerView.TicketAdapter
+import com.example.workingapp.ui.*
 
 class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         }
 
         bindingMain.tbTicket.setOnMenuItemClickListener{ item ->
-            if (item.itemId==R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
+            if (item.itemId== R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
              super.onOptionsItemSelected(item)
         }
 

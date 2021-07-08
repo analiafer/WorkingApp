@@ -1,4 +1,4 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.workingapp.databinding.ActivityClimaBinding
 import com.example.workingapp.model.WeatherModel
-import com.example.workingapp.service.API
+import com.example.workingapp.data.service.API
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,13 +1,9 @@
-package com.example.workingapp.recyclerView
+package com.example.workingapp.ui.recyclerView
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.workingapp.R
-import com.example.workingapp.Ticket
+import com.example.workingapp.model.Ticket
 import com.example.workingapp.databinding.RowTicketBinding
 
 class TicketAdapter(
