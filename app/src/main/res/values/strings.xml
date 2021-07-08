@@ -45,4 +45,5 @@
     <string name="v_presion">1018</string>
     <string name="vel_viento">Velocidad viento</string>
     <string name="v_viento">18.5km</string>
+    <string name="toastInfoVacia"> Complete todos los campos por favor!</string>
 </resources>

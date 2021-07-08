@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "ticket")
 data class TicketEntity (
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val id : Long = 0,
 

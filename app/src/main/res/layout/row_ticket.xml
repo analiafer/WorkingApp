@@ -26,6 +26,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="10dp"
             android:text="@string/titulo_ticket"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -33,6 +34,8 @@
             android:id="@+id/textDescripcionTicket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="45dp"
             android:layout_marginBottom="42dp"
@@ -47,6 +50,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginBottom="8dp"
             android:text="@string/autor"
+            android:textStyle="bold"
             android:textSize="18sp" />
 
         <TextView
@@ -56,6 +60,7 @@
             android:layout_gravity="bottom|end"
             android:layout_marginHorizontal="18dp"
             android:layout_marginBottom="8dp"
+            android:textStyle="bold"
             android:text="23/05/2021"
             android:textSize="14sp" />
 
