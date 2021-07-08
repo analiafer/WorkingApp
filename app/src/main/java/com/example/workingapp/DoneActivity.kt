@@ -6,8 +6,12 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workingapp.databinding.ActivityDoneBinding
+import com.example.workingapp.recyclerView.TicketAdapter
+
+
 
 class DoneActivity : AppCompatActivity() {
+
     private lateinit var bindingDone: ActivityDoneBinding
     private lateinit var viewTicket: LinearLayout
 
@@ -21,6 +25,8 @@ class DoneActivity : AppCompatActivity() {
         setViews()
         setListener()
 
+
+
         /*Ari recycler
         val recycler = findViewById<RecyclerView>(R.id.recycler)
          recycler.adapter =*/
@@ -28,6 +34,7 @@ class DoneActivity : AppCompatActivity() {
 
     private fun setViews() {
         viewTicket = findViewById(R.id.viewTicket)
+
     }
 
     private fun setListener() {
@@ -91,4 +98,8 @@ class DoneActivity : AppCompatActivity() {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
+
+
 }
+
+

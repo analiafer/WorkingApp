@@ -2,26 +2,41 @@ package com.example.workingapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.Toast
+import androidx.activity.viewModels
+import com.example.workingapp.databinding.ActivityNewTicketBinding
 
 class NewTicketActivity : AppCompatActivity() {
-    lateinit var btnSumarAceptar: Button
+    private lateinit var bindingNewTicket : ActivityNewTicketBinding
+    private val vm: TicketViewModel by viewModels { TicketViewModelFactory(applicationContext)  }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_new_ticket)
+        bindingNewTicket = ActivityNewTicketBinding.inflate(layoutInflater)
+        setContentView(bindingNewTicket.root)
 
-        getViews()
-        setListeners()
-    }
-    private fun getViews(){
-        btnSumarAceptar = findViewById(R.id.btnSumarAceptar)
+        addDataToDatabase()
     }
 
-    private fun setListeners(){
-        btnSumarAceptar.setOnClickListener {
-            finish()
+    private fun addDataToDatabase(){
+
+        bindingNewTicket.btnSumarAceptar.setOnClickListener {
+
+            val titulo = bindingNewTicket.etTitulo.text.toString()
+            val autor = bindingNewTicket.etAutor.text.toString()
+            val contenido = bindingNewTicket.etDescripcion.text.toString()
+
+            if(titulo.isEmpty() || autor.isEmpty() || contenido.isEmpty()){
+                Toast.makeText(this,R.string.toastInfoVacia, Toast.LENGTH_SHORT).show()
+
+            }else{
+                vm.saveTicket(titulo, autor, contenido)
+                finish()
+            }
+
         }
+
     }
 }
