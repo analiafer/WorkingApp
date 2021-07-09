@@ -12,6 +12,7 @@ class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener 
 
     private lateinit var bindingCancel: ActivityCancelBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +37,7 @@ class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener 
         val navigationBottom = bindingCancel.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_cancel
         navigationBottom.setOnNavigationItemSelectedListener { item ->
+
             when (item.itemId) {
                 R.id.option_general -> {
                     optionGeneral()
