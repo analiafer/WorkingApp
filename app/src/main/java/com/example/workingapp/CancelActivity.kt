@@ -110,8 +110,6 @@ class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener 
         )
         recyclerCancelMain.adapter = TicketAdapter(listTicket2, this)
     }
-
-    //Le doy la funcionalidad a la función de la interface.
     override fun onItemClick() {
         var intent = Intent(this, ViewTicketActivity::class.java)
     }
