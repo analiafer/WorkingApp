@@ -8,14 +8,14 @@ import com.example.workingapp.databinding.ActivityEnProcesoBinding
 import com.example.workingapp.recyclerView.Ticket
 import com.example.workingapp.recyclerView.TicketAdapter
 
-class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
+class EnProcesoActivity : AppCompatActivity() {
     private lateinit var bindingProceso: ActivityEnProcesoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingProceso = ActivityEnProcesoBinding.inflate(layoutInflater)
         setContentView(bindingProceso.root)
-        setupRecyclerView()
+
         val appbarnav = bindingProceso.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -79,29 +79,6 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }
-
-    private fun setupRecyclerView() {
-        val recyclerViewMain = bindingProceso.recyclerView
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        recyclerViewMain.layoutManager = layoutManager
-
-        var listTicket = listOf(
-            Ticket("Ticket 1", "desc", "Autor", 1),
-            Ticket("Ticket 2", "desc", "Autor 2", 2),
-            Ticket("Ticket 3", "desc", "Autor 3", 3),
-            Ticket("Ticket 4", "desc", "Autor 4", 4),
-            Ticket("Ticket 5", "desc", "Autor 5", 5),
-            Ticket("Ticket 6", "desc", "Autor 6", 6),
-            Ticket("Ticket 7", "desc", "Autor 7", 7),
-            Ticket("Ticket 8", "desc", "Autor 8", 8)
-        )
-        recyclerViewMain.adapter = TicketAdapter(listTicket, this)
-    }
-
-    override fun onItemClick() {
-        var intent = Intent(this, ViewTicketActivity::class.java)
-        startActivity(intent)
     }
 
 }
