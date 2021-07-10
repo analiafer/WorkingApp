@@ -1,16 +1,16 @@
-package com.example.workingapp.recyclerView
+package com.example.workingapp.ui.recyclerView
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.workingapp.R
+import com.example.workingapp.model.Ticket
+import com.example.workingapp.databinding.RowTicketBinding
 
 class TicketAdapter(
-    private val ticketList: List<Ticket>,
     private val ticketClickListener: OnTicketClickListener
 ) : RecyclerView.Adapter<TicketAdapter.TicketViewHolder>() {
+
+    private val tickets = mutableListOf<Ticket>()
 
     //Se crea una interfaz con la función al hacer click
     interface OnTicketClickListener {
@@ -19,35 +19,44 @@ class TicketAdapter(
 
     //Que va a cargar cuando se cree una view nueva (nuevo item en el recycler)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.row_ticket, parent, false)
-        return TicketViewHolder(view)
+        val binding = RowTicketBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TicketViewHolder(binding)
     }
 
     //Va a linkear el contenido de las vistas a las mismas.
     override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
-        val ticket = ticketList[position]
+        val ticket = tickets[position]
         //Metodo para accionar cada detalle, nombre, descripcion, etc.
         holder.bind(ticket)
     }
 
     //Cantidad total de elementos, va a ser igual a la cantidad de la lista.
-    override fun getItemCount(): Int = ticketList.size
+    override fun getItemCount(): Int = tickets.size
 
-    inner class TicketViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    fun submitList(it: List<Ticket>) {
+        tickets.clear()
+        tickets.addAll(it)
+
+        notifyDataSetChanged()
+    }
+
+    inner class TicketViewHolder(binding: RowTicketBinding) : RecyclerView.ViewHolder(binding.root) {
 
         //Asigno dentro del ViewHolder a que hace referencia cada variable.
-        private val tittle = view.findViewById<TextView>(R.id.textTituloTicket)
-        private val description = view.findViewById<TextView>(R.id.textDescripcionTicket)
-        private val autor = view.findViewById<TextView>(R.id.textNombreAutor)
-        private val date = view.findViewById<TextView>(R.id.textDateTicket)
+        private val tittle = binding.textTituloTicket
+        private val description = binding.textDescripcionTicket
+        private val autor = binding.textNombreAutor
+        private val date = binding.textDateTicket
+        private val card = binding.backgroundTextTicket
 
         fun bind(ticket: Ticket) {
             tittle.text = ticket.titulo
             description.text = ticket.descripcion
             autor.text = ticket.autor
-            date.text = ticket.fecha.toString()
+
+
             //Ejecuto el setOnClickListener en el view, utilizando la variable de la interface creada y su metodo.
-            view.setOnClickListener { ticketClickListener.onItemClick() }
+            card.setOnClickListener { ticketClickListener.onItemClick() }
         }
 
 

@@ -1,35 +1,32 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.workingapp.databinding.ActivityEnProcesoBinding
-import com.example.workingapp.recyclerView.Ticket
-import com.example.workingapp.recyclerView.TicketAdapter
+import com.example.workingapp.*
+import com.example.workingapp.databinding.ActivityCancelBinding
 
-class EnProcesoActivity : AppCompatActivity() {
-    private lateinit var bindingProceso: ActivityEnProcesoBinding
+class CancelActivity : AppCompatActivity() {
 
+    private lateinit var bindingCancel: ActivityCancelBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingProceso = ActivityEnProcesoBinding.inflate(layoutInflater)
-        setContentView(bindingProceso.root)
-
-        val appbarnav = bindingProceso.tbTicket
+        bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
+        setContentView(bindingCancel.root)
+        var appbarnav = bindingCancel.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setListener()
     }
 
     private fun setListener() {
-        bindingProceso.recyclerView.setOnClickListener{
-            val intent = Intent(this, ViewTicketActivity::class.java)
+        bindingCancel.viewTicket.setOnClickListener {
+            var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
         }
 
-        val navigationBottom = bindingProceso.bottomNavigation
-        navigationBottom.selectedItemId = R.id.option_enproceso
+        val navigationBottom = bindingCancel.bottomNavigation
+        navigationBottom.selectedItemId = R.id.option_cancel
         navigationBottom.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.option_general -> {
@@ -54,7 +51,9 @@ class EnProcesoActivity : AppCompatActivity() {
                     super.onOptionsItemSelected(item)
                 }
             }
+
         }
+
     }
 
     private fun optionGeneral() {
@@ -80,5 +79,4 @@ class EnProcesoActivity : AppCompatActivity() {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
-
 }

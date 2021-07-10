@@ -1,17 +1,21 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.viewModels
 import android.os.Bundle
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityMainBinding
-import com.example.workingapp.recyclerView.Ticket
-import com.example.workingapp.recyclerView.TicketAdapter
+import com.example.workingapp.ui.recyclerView.TicketAdapter
+import com.example.workingapp.ui.*
 
 class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
-
+    private lateinit var ticketAdapter: TicketAdapter
+    private val viewModel: TicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
+    //private val addViewModel: AddTicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +23,16 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         setContentView(bindingMain.root)
         setupRecyclerView()
         setListener()
+        observer()
+
+        viewModel.getAll()
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getAll()
+    }
+
 
     private fun setListener() {
         /*boton Ari para ir al nuevo ticket*/
@@ -29,11 +42,11 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         }
 
         bindingMain.tbTicket.setOnMenuItemClickListener{ item ->
-            if (item.itemId==R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
+            if (item.itemId== R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
              super.onOptionsItemSelected(item)
         }
 
-        var navigationBottom = bindingMain.bottomNavigation
+        val navigationBottom = bindingMain.bottomNavigation
         navigationBottom.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.option_general -> {
@@ -88,35 +101,26 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
 
     //Setup del recyclerView
     private fun setupRecyclerView() {
-        //Asigno una variable al recyclerView del layout
-        val recyclerViewMain = bindingMain.recyclerView
-        //Asigno un layoutManager para elegir de que manera va a organizarse el recycler (grid, linear, etc...)
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        //Le termino de asignar la variable anterior al layoutManager
-        recyclerViewMain.layoutManager = layoutManager
-
-        //Sólo de prueba al no contar aún con room, creo los datos manualmente.
-        var listTicket = listOf(
-            Ticket("Soy un ticket", "Soy una descripcion", "Autor", 1),
-            Ticket("Soy un ticket 2", "Soy una descripcion 2", "Autor 2", 2),
-            Ticket("Soy un ticket 3", "Soy una descripcion 3", "Autor 3", 3),
-            Ticket("Soy un ticket 4", "Soy una descripcion 4", "Autor 4", 4),
-            Ticket("Soy un ticket 5", "Soy una descripcion 5", "Autor 5", 5),
-            Ticket("Soy un ticket 6", "Soy una descripcion 6", "Autor 6", 6),
-            Ticket("Soy un ticket 7", "Soy una descripcion 7", "Autor 7", 7),
-            Ticket("Soy un ticket 8", "Soy una descripcion 8", "Autor 8", 8),
-            Ticket("Soy un ticket 9", "Soy una descripcion 9", "Autor 9", 9),
-            Ticket("Soy un ticket 10", "Soy una descripcion 10", "Autor 10", 10),
-            Ticket("Soy un ticket 11", "Soy una descripcion 11", "Autor 11", 11),
-            Ticket("Soy un ticket 12", "Soy una descripcion 12", "Autor 12", 12)
-        )
-        recyclerViewMain.adapter = TicketAdapter(listTicket, this)
+        ticketAdapter = TicketAdapter(this)
+        with(bindingMain.recyclerView) {
+            layoutManager =
+                LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
+            this.adapter = this@MainActivity.ticketAdapter
+        }
     }
 
     //Le doy la funcionalidad a la función de la interface.
     override fun onItemClick() {
-        var intent = Intent(this, ViewTicketActivity::class.java)
+        val intent = Intent(this, ViewTicketActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun observer() {
+        viewModel.ticketLiveData.observe(this
+        ) {
+            ticketAdapter.submitList(it)
+            ticketAdapter.notifyDataSetChanged()
+        }
     }
 
 
