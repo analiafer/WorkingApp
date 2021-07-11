@@ -3,12 +3,8 @@ package com.example.workingapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD:app/src/main/java/com/example/workingapp/ui/DoneActivity.kt
 import com.example.workingapp.R
-=======
 import android.widget.LinearLayout
-import androidx.recyclerview.widget.RecyclerView
->>>>>>> 9bc94655fa0e0e791e925a1af75e446ee9ad4138:app/src/main/java/com/example/workingapp/DoneActivity.kt
 import com.example.workingapp.databinding.ActivityDoneBinding
 
 

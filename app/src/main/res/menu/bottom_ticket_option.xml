@@ -4,14 +4,14 @@
     <item
         android:id="@+id/optionCloseTicket"
         android:enabled="true"
-        android:icon="@drawable/ic_cancel"
+        android:icon="@drawable/ic_back"
         android:title="@string/optionCloseTicket"
         app:showAsAction="always" />
     <item
         android:id="@+id/optionDeleteTicket"
         android:enabled="true"
         android:icon="@drawable/ic_delete"
-        android:title="@string/optionDeleteTicket"
+        android:title="@string/optionBackTicket"
         app:showAsAction="ifRoom" />
 
 </menu>
