@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewTicketActivity">
+    tools:context=".ui.NewTicketActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_ticket"
@@ -82,6 +82,7 @@
         android:layout_height="181dp"
         android:layout_marginTop="312dp"
         android:background="#65D0D8D0"
+        android:gravity="top"
         android:hint="Escriba una descripcion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"

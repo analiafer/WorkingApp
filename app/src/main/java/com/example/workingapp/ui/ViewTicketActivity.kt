@@ -1,9 +1,10 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityViewTicketBinding
 
 
@@ -23,5 +24,4 @@ class ViewTicketActivity : AppCompatActivity() {
         inflater.inflate(R.menu.bottom_ticket_option, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 }

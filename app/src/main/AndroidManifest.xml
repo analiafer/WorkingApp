@@ -14,20 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkingApp">
         <activity
-            android:name=".EnProcesoActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".ui.EnProcesoActivity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".CancelActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".NewTicketActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ClimaActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".DoneActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ViewTicketActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".ui.CancelActivity"
+            android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.NewTicketActivity"
+            android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.ClimaActivity"
+            android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.DoneActivity"
+            android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.ViewTicketActivity"
+            android:parentActivityName=".ui.MainActivity" />
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

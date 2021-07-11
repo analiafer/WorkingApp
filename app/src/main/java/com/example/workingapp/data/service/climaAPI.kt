@@ -1,4 +1,4 @@
-package com.example.workingapp.service
+package com.example.workingapp.data.service
 
 import com.example.workingapp.model.WeatherModel
 import retrofit2.Call

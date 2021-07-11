@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoneActivity">
+    tools:context=".ui.DoneActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_ticket"
@@ -29,64 +29,7 @@
         tools:ignore="MissingConstraints"
         tools:listitem="@layout/row_ticket" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#6500BCD4"
-        app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_ticket"
-        app:layout_constraintVertical_bias="0.017">
 
-
-        <LinearLayout
-            android:id="@+id/viewTicket"
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:orientation="vertical"
-            android:padding="12dp"
-            tools:ignore="MissingConstraints">
-
-            <TextView
-                android:id="@+id/tv_dateTicket"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:textStyle="bold"
-                android:text="@string/ejemplo_date"
-                android:gravity="end"/>
-
-            <TextView
-                android:id="@+id/tv_tituloTicket"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:text="@string/ejemplo_titulo" />
-
-            <TextView
-                android:id="@+id/tv_autorTicket"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:text="@string/ejemplo_autor" />
-
-            <TextView
-                android:id="@+id/tv_cuerpoTicket"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:text="@string/ejemplo_descripcion_ticket" />
-
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

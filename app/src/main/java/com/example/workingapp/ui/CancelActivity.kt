@@ -1,46 +1,38 @@
-package com.example.workingapp
+package com.example.workingapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.RecyclerView
-import com.example.workingapp.databinding.ActivityDoneBinding
+import com.example.workingapp.*
 
-class DoneActivity : AppCompatActivity() {
-    private lateinit var bindingDone: ActivityDoneBinding
-    private lateinit var viewTicket: LinearLayout
+import com.example.workingapp.databinding.ActivityCancelBinding
 
+
+class CancelActivity : AppCompatActivity(){
+
+    private lateinit var bindingCancel: ActivityCancelBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingDone = ActivityDoneBinding.inflate(layoutInflater)
-        setContentView(bindingDone.root)
-        var appbarnav = bindingDone.tbTicket
+        bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
+        setContentView(bindingCancel.root)
+
+        var appbarnav = bindingCancel.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
         setListener()
-
-        /*Ari recycler
-        val recycler = findViewById<RecyclerView>(R.id.recycler)
-         recycler.adapter =*/
-    }
-
-    private fun setViews() {
-        viewTicket = findViewById(R.id.viewTicket)
     }
 
     private fun setListener() {
-        viewTicket.setOnClickListener {
+       /* bindingCancel.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
-        val navigationBottom = bindingDone.bottomNavigation
-        navigationBottom.selectedItemId = R.id.option_realizados
+        val navigationBottom = bindingCancel.bottomNavigation
+        navigationBottom.selectedItemId = R.id.option_cancel
         navigationBottom.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
 
+            when (item.itemId) {
                 R.id.option_general -> {
                     optionGeneral()
                     true
@@ -65,6 +57,7 @@ class DoneActivity : AppCompatActivity() {
             }
 
         }
+
     }
 
     private fun optionGeneral() {
@@ -72,7 +65,6 @@ class DoneActivity : AppCompatActivity() {
         val general = Intent(this, MainActivity::class.java)
         startActivity(general)
     }
-
 
     private fun optionRealizado() {
 
@@ -91,4 +83,7 @@ class DoneActivity : AppCompatActivity() {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
+
+
+
 }
