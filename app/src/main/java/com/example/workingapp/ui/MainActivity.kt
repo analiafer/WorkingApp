@@ -9,6 +9,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityMainBinding
+import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
 import com.example.workingapp.ui.*
 
@@ -26,7 +27,6 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         setupRecyclerView()
         setListener()
         observer()
-
         viewModel.getAll()
     }
 
@@ -111,9 +111,11 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         }
     }
 
-    //Le doy la funcionalidad a la función de la interface.
-    override fun onItemClick() {
+    //Cuando hago click en un item del recycler, voy al ViewTicketActivity y además paso el ID del ticket en el cual estoy apretando
+    //para después usarlo en la otra activity.
+    override fun onItemClick(ticket: Ticket) {
         val intent = Intent(this, ViewTicketActivity::class.java)
+        intent.putExtra("ID",ticket.id)
         startActivity(intent)
     }
 

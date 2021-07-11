@@ -14,12 +14,71 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
+        app:menu="@menu/bottom_ticket_option"
         app:title="Ticket"
         app:titleTextColor="@color/white"
         tools:layout_editor_absoluteX="0dp">
 
     </androidx.appcompat.widget.Toolbar>
 
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/backgroundTextTicket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        android:backgroundTint="@color/background_description_ticket"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbTicketView">
+        <TextView
+            android:id="@+id/textTituloTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/titulo_ticket"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textDescripcionTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="42dp"
+            android:text="@string/descripcion_del_ticket"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textNombreAutor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/autor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textDateTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginBottom="8dp"
+            android:text="23/05/2021"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -38,6 +97,7 @@
             app:fabCradleMargin="10dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnEditTicket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_edit"

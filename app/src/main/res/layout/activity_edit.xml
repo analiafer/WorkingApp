@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.NewTicketActivity">
+    tools:context=".ui.EditActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tb_ticket"
+        android:id="@+id/tb_ticketEdit"
         android:background="#2180F3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-16dp"
-        app:title="Tickets Nuevos"
+        app:title="Modificar Ticket"
         app:titleTextColor="#F4F4F4"
         tools:ignore="NotSibling">
 
@@ -22,11 +22,11 @@
 
 
     <TextView
-        android:id="@+id/tvSumar"
+        android:id="@+id/tvEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="Añadir Ticket"
+        android:text="Modificar Ticket"
         android:textColor="#2180F3"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -67,7 +67,6 @@
         android:layout_height="41dp"
         android:layout_marginTop="244dp"
         android:background="#65D0D8D0"
-
         android:hint="Ingrese fecha"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,10 +88,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSumarAceptar"
+        android:id="@+id/btnEditarAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aceptar"
+        android:text="Guardar"
         app:backgroundTint="#2180F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

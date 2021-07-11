@@ -14,7 +14,7 @@ class TicketAdapter(
 
     //Se crea una interfaz con la función al hacer click
     interface OnTicketClickListener {
-        fun onItemClick()
+        fun onItemClick(ticket: Ticket)
     }
 
     //Que va a cargar cuando se cree una view nueva (nuevo item en el recycler)
@@ -56,7 +56,7 @@ class TicketAdapter(
 
 
             //Ejecuto el setOnClickListener en el view, utilizando la variable de la interface creada y su metodo.
-            card.setOnClickListener { ticketClickListener.onItemClick() }
+            card.setOnClickListener { ticketClickListener.onItemClick(ticket) }
         }
 
 

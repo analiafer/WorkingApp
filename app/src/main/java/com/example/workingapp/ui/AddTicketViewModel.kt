@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.model.Ticket
-import com.example.workingapp.model.TicketsReposotiry
+import com.example.workingapp.model.TicketsRepository
 
-class AddTicketViewModel  (private val repository: TicketsReposotiry) : ViewModel(){
+class AddTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
 
     val ticketLiveData = MutableLiveData<List<Ticket>>()
 
