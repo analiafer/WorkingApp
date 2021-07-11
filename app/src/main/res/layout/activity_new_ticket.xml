@@ -39,11 +39,11 @@
         android:id="@+id/etTitulo"
         android:layout_width="292dp"
         android:layout_height="43dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="168dp"
         android:background="#65D0D8D0"
         android:hint="Escriba el Titulo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,27 +51,13 @@
         android:id="@+id/etAutor"
         android:layout_width="293dp"
         android:layout_height="41dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="228dp"
         android:background="#65D0D8D0"
 
         android:hint="Escriba el Autor"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etFecha"
-        android:layout_width="293dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="244dp"
-        android:background="#65D0D8D0"
-
-        android:hint="Ingrese fecha"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

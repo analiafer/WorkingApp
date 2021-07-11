@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.workingapp.data.AppDatabase
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import com.example.workingapp.model.Ticket
 
 class EditActivity : AppCompatActivity() {
     private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
@@ -46,8 +48,10 @@ class EditActivity : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
 
-                }
+                    val database = AppDatabase.getDatabase(this)
+                database.ticketDao().update(ticket)
 
+                }
 
             }
 

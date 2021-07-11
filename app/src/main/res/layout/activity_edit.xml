@@ -25,13 +25,13 @@
         android:id="@+id/tvEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="96dp"
         android:text="Modificar Ticket"
         android:textColor="#2180F3"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +39,7 @@
         android:id="@+id/etTitulo"
         android:layout_width="292dp"
         android:layout_height="43dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="164dp"
         android:background="#65D0D8D0"
         android:hint="Escriba el Titulo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,26 +51,13 @@
         android:id="@+id/etAutor"
         android:layout_width="293dp"
         android:layout_height="41dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="232dp"
         android:background="#65D0D8D0"
 
         android:hint="Escriba el Autor"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etFecha"
-        android:layout_width="293dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="244dp"
-        android:background="#65D0D8D0"
-        android:hint="Ingrese fecha"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
