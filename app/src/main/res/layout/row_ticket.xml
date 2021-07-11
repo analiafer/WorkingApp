@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/backgroundTextTicket"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
+        android:layout_height="match_parent"
         android:layout_marginHorizontal="5dp"
         android:layout_marginVertical="5dp"
         android:backgroundTint="@color/background_description_ticket"
