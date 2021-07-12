@@ -1,5 +1,6 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,8 @@ import androidx.lifecycle.Observer
 import com.example.workingapp.data.AppDatabase
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class EditActivity : AppCompatActivity() {
@@ -27,6 +30,7 @@ class EditActivity : AppCompatActivity() {
         updateTicket()
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun updateTicket(){
         val idDetalle = intent.getLongExtra("IdTicketEdit", 0)
         idUpTicket = idDetalle
@@ -41,7 +45,9 @@ class EditActivity : AppCompatActivity() {
                  id = idUpTicket,
                  titulo = bindingEditTicket.etTitulo.text.toString(),
                  autor = bindingEditTicket.etAutor.text.toString(),
-                 descripcion= bindingEditTicket.etDescripcion.text.toString())
+                 descripcion= bindingEditTicket.etDescripcion.text.toString(),
+                 fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())
+                )
 
                 viewModel.updateTicket(ticket)
                 val intent = Intent(this, MainActivity::class.java)

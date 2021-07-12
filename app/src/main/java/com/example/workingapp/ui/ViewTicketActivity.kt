@@ -1,12 +1,9 @@
 package com.example.workingapp.ui
 
 import android.content.Intent
-import android.os.Build.ID
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityViewTicketBinding
@@ -41,6 +38,7 @@ class ViewTicketActivity : AppCompatActivity() {
             bindingViewTicket.textTituloTicket.text = it.titulo
             bindingViewTicket.textNombreAutor.text = it.autor
             bindingViewTicket.textDescripcionTicket.text = it.descripcion
+            bindingViewTicket.textDateTicket.text = it.fechahora
         })
     }
 
