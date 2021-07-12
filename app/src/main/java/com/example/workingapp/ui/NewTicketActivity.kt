@@ -19,6 +19,9 @@ class NewTicketActivity : AppCompatActivity() {
         bindingNewTicket = ActivityNewTicketBinding.inflate(layoutInflater)
         setContentView(bindingNewTicket.root)
 
+        val appbarnav = bindingNewTicket.tbTicket
+        setSupportActionBar(appbarnav)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         addDataToDatabase()
     }
 

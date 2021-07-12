@@ -1,17 +1,17 @@
 package com.example.workingapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityViewTicketBinding
-import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 
 
 class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
-    private val viewModel: ViewTicketViewModel by viewModels()
+    private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
     private var idTicket: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +25,11 @@ class ViewTicketActivity : AppCompatActivity() {
         viewModel.getById(idTicket)
         setObserver()
         setListener()
+        bindingViewTicket.btnEditTicket.setOnClickListener(){
+            val intentEdit = Intent(this, EditActivity::class.java)
+            intentEdit.putExtra("IdTicketEdit",idTicket)
+            startActivity(intentEdit)
+        }
     }
 
     //función que setea los datos en la base de datos con los elementos del activity.
@@ -33,6 +38,7 @@ class ViewTicketActivity : AppCompatActivity() {
             bindingViewTicket.textTituloTicket.text = it.titulo
             bindingViewTicket.textNombreAutor.text = it.autor
             bindingViewTicket.textDescripcionTicket.text = it.descripcion
+            bindingViewTicket.textDateTicket.text = it.fechahora
         })
     }
 

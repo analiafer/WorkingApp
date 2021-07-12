@@ -7,7 +7,8 @@ import androidx.room.RoomDatabase
 
 @Database(
     version = 1,
-    entities = [TicketEntity::class]
+    entities = [TicketEntity::class],
+    exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
 
@@ -24,7 +25,7 @@ abstract class AppDatabase : RoomDatabase() {
                 db = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "working"
+                    "workingApplication"
                 )
                     .allowMainThreadQueries()
                     .build()
