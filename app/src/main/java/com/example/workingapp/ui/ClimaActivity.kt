@@ -1,12 +1,14 @@
 package com.example.workingapp.ui
 
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
+import com.example.workingapp.PronosticoActivity
 import com.example.workingapp.databinding.ActivityClimaBinding
 import com.example.workingapp.model.WeatherList
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -29,6 +31,11 @@ class ClimaActivity : AppCompatActivity() {
         val appbarnav = bindingClima.tbClima
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        bindingClima.button.setOnClickListener(){
+            val intent = Intent(this, PronosticoActivity::class.java)
+            startActivity(intent)
+        }
 
         initObserver()
     }
