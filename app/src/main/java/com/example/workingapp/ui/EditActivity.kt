@@ -8,8 +8,7 @@ import androidx.lifecycle.Observer
 import com.example.workingapp.data.AppDatabase
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
-import com.example.workingapp.databinding.ActivityViewTicketBinding
-import com.example.workingapp.model.Ticket
+
 
 class EditActivity : AppCompatActivity() {
     private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
@@ -44,33 +43,16 @@ class EditActivity : AppCompatActivity() {
                  autor = bindingEditTicket.etAutor.text.toString(),
                  descripcion= bindingEditTicket.etDescripcion.text.toString())
 
-                if(idUpTicket!=null){
-                    viewModel.updateTicket(ticket)
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    val database = AppDatabase.getDatabase(this)
+                viewModel.updateTicket(ticket)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                val database = AppDatabase.getDatabase(this)
                 database.ticketDao().update(ticket)
-
-                }
 
             }
 
         })
     }
-private fun setListener(){
-    bindingEditTicket.btnEditarAceptar.setOnClickListener{
 
-            val id = idUpTicket
-            val titulo = bindingEditTicket.etTitulo.text.toString()
-            val autor = bindingEditTicket.etAutor.text.toString()
-            val descripcion= bindingEditTicket.etDescripcion.text.toString()
-
-        if(id!=null){
-
-        }
-        viewModel.saveTicket(titulo,autor,descripcion)
-        finish()
-    }
-}
 
 }

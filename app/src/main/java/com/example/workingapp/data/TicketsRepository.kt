@@ -1,4 +1,4 @@
-package com.example.workingapp.model
+package com.example.workingapp.data
 
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.model.Ticket
@@ -6,8 +6,8 @@ import com.example.workingapp.model.Ticket
 interface TicketsRepository {
 
     //Acá van todas las funciones
-    fun save (ticket: TicketEntity)
-    fun getAll() : List<Ticket>
+    suspend fun save (ticket: TicketEntity)
+    suspend fun getAll() : List<Ticket>
     fun getById(ticketID: Long): TicketEntity
     fun delete (ticket: TicketEntity)
     fun update (ticket: TicketEntity)
