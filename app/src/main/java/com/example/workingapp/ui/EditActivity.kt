@@ -22,9 +22,10 @@ class EditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingEditTicket = ActivityEditBinding.inflate(layoutInflater)
         setContentView(bindingEditTicket.root)
+        var appbarnav = bindingEditTicket.tbTicketEdit
+        setSupportActionBar(appbarnav)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         updateTicket()
-
-
     }
 
     private fun updateTicket(){
@@ -47,7 +48,6 @@ class EditActivity : AppCompatActivity() {
                     viewModel.updateTicket(ticket)
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-
                     val database = AppDatabase.getDatabase(this)
                 database.ticketDao().update(ticket)
 
