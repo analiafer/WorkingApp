@@ -19,6 +19,9 @@ data class TicketEntity (
     val autor : String,
 
     @ColumnInfo(name = "descripcion")
-    val descripcion : String
+    val descripcion : String,
+
+    @ColumnInfo(name = "fechahora")
+    val fechahora : String
 )
 
