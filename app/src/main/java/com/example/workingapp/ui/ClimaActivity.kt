@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
-import com.example.workingapp.PronosticoActivity
 import com.example.workingapp.databinding.ActivityClimaBinding
 import com.example.workingapp.model.WeatherList
 import org.koin.android.viewmodel.ext.android.viewModel
