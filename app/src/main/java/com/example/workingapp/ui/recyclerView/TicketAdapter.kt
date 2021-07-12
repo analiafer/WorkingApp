@@ -53,6 +53,7 @@ class TicketAdapter(
             tittle.text = ticket.titulo
             description.text = ticket.descripcion
             autor.text = ticket.autor
+            date.text = ticket.fechahora
 
 
             //Ejecuto el setOnClickListener en el view, utilizando la variable de la interface creada y su metodo.
