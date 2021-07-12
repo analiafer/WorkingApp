@@ -1,20 +1,17 @@
 package com.example.workingapp.ui
 
-import android.content.Intent
-import android.os.Build.ID
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 
 
 class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
-    private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
+    private val viewModel: ViewTicketViewModel by viewModels()
     private var idTicket: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

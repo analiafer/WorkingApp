@@ -8,7 +8,6 @@ import android.widget.LinearLayout
 import com.example.workingapp.databinding.ActivityDoneBinding
 
 
-
 class DoneActivity : AppCompatActivity() {
 
     private lateinit var bindingDone: ActivityDoneBinding
