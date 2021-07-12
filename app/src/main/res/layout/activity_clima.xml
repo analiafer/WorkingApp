@@ -432,4 +432,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/pronostico"
+        app:backgroundTint="#4AFFFFFF"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/constraintAmanecer"
+        app:layout_constraintEnd_toEndOf="@+id/txtTemperaturaMax"
+        app:layout_constraintStart_toStartOf="@+id/txtTemperaturaMin"
+        app:layout_constraintTop_toBottomOf="@+id/txtEstado"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
