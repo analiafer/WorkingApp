@@ -1,4 +1,4 @@
-package com.example.workingapp.model
+package com.example.workingapp.data
 
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.model.Ticket

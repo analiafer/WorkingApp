@@ -1,7 +1,6 @@
 package com.example.workingapp.data
 
 import com.example.workingapp.model.Ticket
-import com.example.workingapp.model.TicketsRepository
 
 class RoomRepository(private val dao: TicketDao) : TicketsRepository {
 
