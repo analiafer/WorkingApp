@@ -10,5 +10,5 @@ interface TicketsRepository {
     fun getAll() : List<Ticket>
     fun getById(ticketID: Long): TicketEntity
     fun delete (ticket: TicketEntity)
-
+    fun update (ticket: TicketEntity)
 }

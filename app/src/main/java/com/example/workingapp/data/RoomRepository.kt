@@ -29,4 +29,14 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
     override fun delete(ticket: TicketEntity) {
         dao.delete(ticket)
     }
+
+    override fun update(ticket: TicketEntity) {
+        val entity = TicketEntity(
+            titulo = ticket.titulo,
+            autor = ticket.autor,
+            descripcion = ticket.descripcion
+        )
+        dao.update(entity)
+
+    }
 }

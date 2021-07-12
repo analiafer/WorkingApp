@@ -21,6 +21,8 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/backgroundTextTicket"
         android:layout_width="match_parent"
@@ -78,6 +80,7 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="86dp"
@@ -94,6 +97,7 @@
             app:fabCradleMargin="10dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnEditTicket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_edit"

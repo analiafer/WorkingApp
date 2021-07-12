@@ -28,6 +28,11 @@ class ViewTicketActivity : AppCompatActivity() {
         viewModel.getById(idTicket)
         setObserver()
         setListener()
+        bindingViewTicket.btnEditTicket.setOnClickListener(){
+            val intentEdit = Intent(this, EditActivity::class.java)
+            intentEdit.putExtra("IdTicketEdit",idTicket)
+            startActivity(intentEdit)
+        }
     }
 
     //función que setea los datos en la base de datos con los elementos del activity.
@@ -52,4 +57,3 @@ class ViewTicketActivity : AppCompatActivity() {
         }
     }
 }
-

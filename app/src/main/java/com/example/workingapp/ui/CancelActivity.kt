@@ -4,15 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.workingapp.*
+
 import com.example.workingapp.databinding.ActivityCancelBinding
 
-class CancelActivity : AppCompatActivity() {
+
+class CancelActivity : AppCompatActivity(){
 
     private lateinit var bindingCancel: ActivityCancelBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
         setContentView(bindingCancel.root)
+
         var appbarnav = bindingCancel.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -20,14 +23,15 @@ class CancelActivity : AppCompatActivity() {
     }
 
     private fun setListener() {
-        bindingCancel.viewTicket.setOnClickListener {
+       /* bindingCancel.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         val navigationBottom = bindingCancel.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_cancel
         navigationBottom.setOnNavigationItemSelectedListener { item ->
+
             when (item.itemId) {
                 R.id.option_general -> {
                     optionGeneral()
@@ -79,4 +83,7 @@ class CancelActivity : AppCompatActivity() {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
+
+
+
 }

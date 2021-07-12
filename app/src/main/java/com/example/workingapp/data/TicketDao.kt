@@ -1,9 +1,6 @@
 package com.example.workingapp.data
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.example.workingapp.model.Ticket
 
 @Dao
@@ -22,6 +19,6 @@ interface TicketDao {
     @Delete
     fun delete (ticket: TicketEntity)
 
-    //@Update
-
+    @Update
+    fun update(ticket: TicketEntity)
 }

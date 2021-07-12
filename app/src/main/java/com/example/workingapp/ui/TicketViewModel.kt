@@ -37,7 +37,10 @@ class TicketViewModel (private val repository: TicketsRepository) : ViewModel(){
         repository.save(TicketEntity(titulo = titulo, autor = autor, descripcion = contenido))
         ticketLiveData.value = repository.getAll()
     }
-
+    fun updateTicket(ticket: TicketEntity){
+        repository.update(ticket)
+        ticketLiveData.value = repository.getAll()
+    }
 
 
 
