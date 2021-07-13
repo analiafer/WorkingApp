@@ -18,8 +18,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
 
     private lateinit var bindingDone: ActivityDoneBinding
-    private lateinit var ticketAdapter : TicketAdapter
-    private val doneVm : DoneViewModel by viewModel()
+    private lateinit var ticketAdapter: TicketAdapter
+    private val doneVm: DoneViewModel by viewModel()
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
@@ -27,9 +27,9 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         sharedpref = SharedPref(this)
-        if(sharedpref.loadNightModeState()==true){
+        if (sharedpref.loadNightModeState() == true) {
             setTheme(R.style.DarkTheme_WorkingApp)
-        }else{
+        } else {
             setTheme(R.style.Theme_WorkingApp)
         }
         super.onCreate(savedInstanceState)
@@ -63,7 +63,6 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
                     true
                 }
                 R.id.option_realizados -> {
-                    optionRealizado()
                     true
                 }
 
@@ -88,46 +87,40 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
 
         val general = Intent(this, MainActivity::class.java)
         startActivity(general)
-
+        finish()
     }
 
-
-    private fun optionRealizado() {
-
-        val realizado = Intent(this, DoneActivity::class.java)
-        startActivity(realizado)
-
-    }
 
     private fun optionEnProceso() {
 
         val proceso = Intent(this, EnProcesoActivity::class.java)
         startActivity(proceso)
-
+        finish()
     }
 
     private fun optionCancel() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-
+        finish()
     }
 
-    private fun setupRecycler(){
+    private fun setupRecycler() {
         ticketAdapter = TicketAdapter(this)
-        with(bindingDone.recycler){
-          layoutManager = LinearLayoutManager(this@DoneActivity, LinearLayoutManager.VERTICAL, false)
-          this.adapter = this@DoneActivity.ticketAdapter
+        with(bindingDone.recycler) {
+            layoutManager =
+                LinearLayoutManager(this@DoneActivity, LinearLayoutManager.VERTICAL, false)
+            this.adapter = this@DoneActivity.ticketAdapter
         }
     }
 
     override fun onItemClick(ticket: Ticket) {
-        val intentDone = Intent (this, ViewTicketActivity::class.java)
+        val intentDone = Intent(this, ViewTicketActivity::class.java)
         intentDone.putExtra("ID", ticket.id)
         startActivity(intentDone)
     }
 
-    private fun observer(){
+    private fun observer() {
         doneVm.doneLiveData.observe(this, Observer {
             ticketAdapter.submitList(it)
             ticketAdapter.notifyDataSetChanged()

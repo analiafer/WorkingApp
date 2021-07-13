@@ -88,7 +88,6 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         navigationBottom.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.option_general -> {
-                    optionGeneral()
                     true
                 }
                 R.id.option_realizados -> {
@@ -111,12 +110,6 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
             }
 
         }
-
-    }
-
-    private fun optionGeneral() {
-        val general = Intent(this, MainActivity::class.java)
-        startActivity(general)
 
     }
 

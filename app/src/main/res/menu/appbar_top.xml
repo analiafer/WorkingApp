@@ -3,14 +3,9 @@
     <item
         android:id="@+id/option_celendar"
         android:enabled="true"
-        android:title="@string/clima"/>
+        android:title="@string/clima" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/modoOscuro"
-            android:title="Modo oscuro"
-            android:actionLayout="@layout/theme_switch"/>
-    </group>
-
-
+    <item
+        android:id="@+id/modoOscuro"
+        android:title="Modo oscuro/Claro" />
 </menu>
