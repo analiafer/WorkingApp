@@ -4,11 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Switch
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.workingapp.R
 import com.example.workingapp.data.AppDatabase
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
+import com.example.workingapp.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -16,18 +20,53 @@ import java.util.*
 class EditActivity : AppCompatActivity() {
     private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
     private lateinit var bindingEditTicket: ActivityEditBinding
+    private lateinit var bindingMain: ActivityMainBinding
+
     private var idUpTicket: Long = 0
 
-
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private var xyz: Switch? = null
+    internal lateinit var sharedpref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
         bindingEditTicket = ActivityEditBinding.inflate(layoutInflater)
+        bindingMain = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(bindingEditTicket.root)
         var appbarnav = bindingEditTicket.tbTicketEdit
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         updateTicket()
+
+        xyz = bindingMain.switchModo as Switch?
+        if (sharedpref.loadNightModeState() == true){
+            xyz!!.isChecked = true
+        }
+        xyz!!.setOnCheckedChangeListener{
+                buttonView, isChecked ->
+            if(isChecked){
+                sharedpref.setNightModeState(true)
+                restartApp()
+            }else{
+                sharedpref.setNightModeState(false)
+                restartApp()
+            }
+        }
+    }
+
+    fun restartApp(){
+        val i = Intent(getApplicationContext(), MainActivity::class.java)
+        startActivity(i)
+        finish()
     }
 
     @SuppressLint("SimpleDateFormat")

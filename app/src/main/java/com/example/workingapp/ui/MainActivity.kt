@@ -1,13 +1,16 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
+import android.widget.Switch
 import androidx.activity.viewModels
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityMainBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
@@ -17,10 +20,22 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
     private lateinit var ticketAdapter: TicketAdapter
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private var xyz: Switch? = null
+    internal lateinit var sharedpref: SharedPref
+
     private val viewModel: TicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
     //private val addViewModel: AddTicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMain.root)
@@ -28,6 +43,27 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         setListener()
         observer()
         viewModel.getAll()
+
+        xyz = bindingMain.switchModo as Switch?
+        if (sharedpref.loadNightModeState() == true){
+            xyz!!.isChecked = true
+        }
+        xyz!!.setOnCheckedChangeListener{
+                buttonView, isChecked ->
+            if(isChecked){
+                sharedpref.setNightModeState(true)
+                restartApp()
+            }else{
+                sharedpref.setNightModeState(false)
+                restartApp()
+            }
+        }
+    }
+
+    fun restartApp(){
+        val i = Intent(getApplicationContext(), MainActivity::class.java)
+        startActivity(i)
+        finish()
     }
 
     override fun onResume() {

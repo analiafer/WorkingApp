@@ -2,7 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/backgroundcolor">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/backgroundTextTicket"
@@ -10,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="5dp"
         android:layout_marginVertical="5dp"
-        android:backgroundTint="@color/background_description_ticket"
+        android:backgroundTint="?attr/backgroundtextticket"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -23,7 +24,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="10dp"
             android:text="@string/titulo_ticket"
-            android:textColor="@color/black"
+           android:textColor="?attr/textcolor"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -36,6 +37,7 @@
             android:layout_marginBottom="42dp"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="?attr/textcolor"
             android:text="@string/descripcion_del_ticket"
             android:textSize="16sp" />
 
@@ -48,6 +50,7 @@
             android:layout_marginBottom="8dp"
             android:text="@string/autor"
             android:textSize="18sp"
+            android:textColor="?attr/textcolor"
             android:textStyle="bold" />
 
         <TextView
@@ -58,6 +61,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginBottom="8dp"
             android:text="23/05/2021"
+            android:textColor="?attr/textcolor"
             android:textSize="14sp"
             android:textStyle="bold" />
 
