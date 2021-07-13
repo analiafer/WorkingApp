@@ -1,6 +1,7 @@
 package com.example.workingapp.ui
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -8,6 +9,8 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
+import com.example.workingapp.R
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityClimaBinding
 import com.example.workingapp.model.WeatherList
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -21,8 +24,21 @@ class ClimaActivity : AppCompatActivity() {
     private val viewModelClima: ClimaViewModel by viewModel()
     private lateinit var clima: WeatherList
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+    private lateinit var modoOscuro: String
+
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        modoOscuro = if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+            "off"
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+            "on"
+        }
         super.onCreate(savedInstanceState)
 
         bindingClima = ActivityClimaBinding.inflate(layoutInflater)
@@ -56,8 +72,6 @@ class ClimaActivity : AppCompatActivity() {
                 bindingClima.txtAmanecer.text = SimpleDateFormat("hh:mm a", Locale.forLanguageTag("es-ES")).format(Date(it.body()!!.city.sunset.toLong()*1000))
                 bindingClima.txtAtardecer.text = SimpleDateFormat("hh:mm a", Locale.forLanguageTag("es-ES")).format(Date(it.body()!!.city.sunrise.toLong()*1000))
                 bindingClima.txtSTermica.text = clima.main.feelsLike.toLong().toString() + "°"
-
-                Toast.makeText(this,"Corre con exito el observer", Toast.LENGTH_SHORT).show()
             }
         }
     }
