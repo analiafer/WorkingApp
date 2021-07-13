@@ -9,7 +9,7 @@ class SharedPref (context: Context){
     fun setNightModeState (state: Boolean?){
         val editor: SharedPreferences.Editor = mySharedPref.edit()
         editor.putBoolean("Night Mode", state!!)
-        editor.commit()
+        editor.apply()
     }
 
     fun loadNightModeState():Boolean?{
