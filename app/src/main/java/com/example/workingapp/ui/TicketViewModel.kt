@@ -43,7 +43,8 @@ class TicketViewModel (private val repository: TicketsRepository) : ViewModel(){
     }
 
     fun updateTicket(ticket: TicketEntity){
-        repository.update(ticket)
+        viewModelScope.launch(Dispatchers.IO){
+        repository.update(ticket)}
     }
 
 

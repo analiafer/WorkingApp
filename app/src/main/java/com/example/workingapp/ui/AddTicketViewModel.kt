@@ -31,7 +31,5 @@ class AddTicketViewModel  (private val repository: TicketsRepository) : ViewMode
                                          fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())))
             ticketLiveData.value = repository.getAll()
         }
-
     }
-
 }

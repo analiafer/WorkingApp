@@ -5,10 +5,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.workingapp.data.*
 import com.example.workingapp.data.service.DataSource
-import com.example.workingapp.ui.AddTicketViewModel
-import com.example.workingapp.ui.ClimaViewModel
-import com.example.workingapp.ui.TicketViewModel
-import com.example.workingapp.ui.ViewTicketViewModel
+import com.example.workingapp.ui.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.dsl.module
@@ -29,6 +26,8 @@ class Working : Application() {
         viewModel { TicketViewModel(get()) }
         viewModel { AddTicketViewModel(get()) }
         viewModel { ViewTicketViewModel(get()) }
+        viewModel { EditActivityViewModel(get()) }
+
 
     }
 
