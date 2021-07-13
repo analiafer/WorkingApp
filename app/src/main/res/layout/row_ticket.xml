@@ -24,7 +24,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="10dp"
             android:text="@string/titulo_ticket"
-           android:textColor="?attr/textcolor"
+            android:textColor="?attr/textcolor"
             android:textSize="18sp"
             android:textStyle="bold" />
 
