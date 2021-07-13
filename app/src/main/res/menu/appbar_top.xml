@@ -7,5 +7,5 @@
 
     <item
         android:id="@+id/modoOscuro"
-        android:title="Modo oscuro/Claro" />
+        android:title="@string/modo_oscuro_claro" />
 </menu>
