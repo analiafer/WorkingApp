@@ -14,14 +14,7 @@ import java.util.*
 class NewTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
 
     val ticketLiveData = MutableLiveData<List<Ticket>>()
-    private val general : String = "general"
 
-    fun getAll(){
-        viewModelScope.launch {
-            ticketLiveData.value = repository.getByEstado(general)
-        }
-
-    }
 
     @SuppressLint("SimpleDateFormat")
     fun saveTicket(titulo: String, autor : String, contenido : String){

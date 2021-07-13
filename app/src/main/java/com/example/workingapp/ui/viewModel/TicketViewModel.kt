@@ -18,21 +18,6 @@ class TicketViewModel(private val repository: TicketsRepository) : ViewModel() {
     val ticket = MutableLiveData<TicketEntity>()
     private val general : String = "general"
 
-    @SuppressLint("SimpleDateFormat")
-    fun saveTicket(titulo: String, autor: String, contenido: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.save(
-                TicketEntity(
-                    titulo = titulo,
-                    autor = autor,
-                    descripcion = contenido,
-                    fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
-                    estado = "general"
-                )
-            )
-            ticketLiveData.value = repository.getAll()
-        }
-    }
 
     fun getAll(){
         viewModelScope.launch {
@@ -41,9 +26,5 @@ class TicketViewModel(private val repository: TicketsRepository) : ViewModel() {
 
     }
 
-    fun updateTicket(ticket: TicketEntity) {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.update(ticket)
-        }
-    }
+
 }
