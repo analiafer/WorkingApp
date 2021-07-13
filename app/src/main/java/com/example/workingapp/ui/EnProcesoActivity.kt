@@ -87,24 +87,28 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
 
         val general = Intent(this, MainActivity::class.java)
         startActivity(general)
+        
     }
 
     private fun optionRealizado() {
 
         val realizado = Intent(this, DoneActivity::class.java)
         startActivity(realizado)
+
     }
 
     private fun optionEnProceso() {
 
         val proceso = Intent(this, EnProcesoActivity::class.java)
         startActivity(proceso)
+
     }
 
     private fun optionCancel() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
+
     }
 
 
