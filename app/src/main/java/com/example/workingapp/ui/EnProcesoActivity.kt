@@ -4,12 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-=======
-import android.widget.LinearLayout
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 import com.example.workingapp.R
 import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityEnProcesoBinding
@@ -19,15 +15,13 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingProceso: ActivityEnProcesoBinding
-<<<<<<< HEAD
     private lateinit var ticketAdapter : TicketAdapter
     private val procesoVm : EnProcesoViewModel by viewModel()
-=======
-    private lateinit var viewTicket: LinearLayout
+
+
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -46,7 +40,6 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setListener()
-<<<<<<< HEAD
         setupRecycler()
         observer()
 
@@ -57,18 +50,9 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
         procesoVm.getAllEnProceso()
     }
 
-    private fun setListener() {
-
-=======
-    }
 
     private fun setListener() {
-       /* bindingProceso.viewTicket.setOnClickListener {
-            var intent = Intent(this, ViewTicketActivity::class.java)
-            startActivity(intent)
-        }
-*/
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
+
         val navigationBottom = bindingProceso.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_enproceso
         navigationBottom.setOnNavigationItemSelectedListener { item ->
@@ -121,7 +105,7 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
-<<<<<<< HEAD
+
 
     private fun setupRecycler(){
         ticketAdapter = TicketAdapter(this)
@@ -143,6 +127,5 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
             ticketAdapter.notifyDataSetChanged()
         })
     }
-=======
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
+
 }

@@ -24,7 +24,7 @@ class Working : Application() {
         single<TicketDao> {dataBase(get()).ticketDao()}
         single<TicketsRepository>{RoomRepository(get())}
         viewModel { TicketViewModel(get()) }
-        viewModel { AddTicketViewModel(get()) }
+        viewModel { NewTicketViewModel(get()) }
         viewModel { ViewTicketViewModel(get()) }
         viewModel { EditActivityViewModel(get()) }
         viewModel { DoneViewModel(get()) }

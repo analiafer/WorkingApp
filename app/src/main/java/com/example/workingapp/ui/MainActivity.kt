@@ -17,7 +17,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
     private lateinit var ticketAdapter: TicketAdapter
-    private val viewModel: AddTicketViewModel by viewModel()
+    private val viewModel: NewTicketViewModel by viewModel()
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
     private lateinit var modoOscuro: String

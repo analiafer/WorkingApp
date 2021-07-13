@@ -26,22 +26,12 @@
 
     <EditText
         android:id="@+id/etTitulo"
-<<<<<<< HEAD
         android:layout_width="352dp"
         android:layout_height="48dp"
         android:layout_marginTop="76dp"
         android:autofillHints=""
         android:background="#65D0D8D0"
         android:hint="@string/escriba_el_titulo"
-=======
-        android:layout_width="292dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="164dp"
-        android:background="?attr/cajadetexto"
-        android:hint="Escriba el Titulo"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/texthint"
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,44 +39,24 @@
 
     <EditText
         android:id="@+id/etAutor"
-<<<<<<< HEAD
         android:layout_width="352dp"
         android:layout_height="48dp"
         android:layout_marginTop="148dp"
         android:background="#65D0D8D0"
         android:hint="@string/escriba_el_autor"
-=======
-        android:layout_width="293dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="232dp"
-        android:background="?attr/cajadetexto"
-
-        android:hint="Escriba el Autor"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/texthint"
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <EditText
         android:id="@+id/etDescripcion"
         android:layout_width="352dp"
         android:layout_height="181dp"
-<<<<<<< HEAD
         android:layout_marginTop="220dp"
         android:background="#65D0D8D0"
         android:gravity="top"
         android:hint="@string/escriba_una_descripcion"
-=======
-        android:layout_marginTop="312dp"
-        android:background="?attr/cajadetexto"
-        android:gravity="top"
-        android:hint="Escriba una descripcion"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/texthint"
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,13 +123,8 @@
         android:id="@+id/btnEditarAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="@string/guardar"
         app:backgroundTint="#2180F3"
-=======
-        android:text="Guardar"
-        app:backgroundTint="?attr/buttoncolor"
->>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

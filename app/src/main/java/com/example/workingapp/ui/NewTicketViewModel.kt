@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
+class NewTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
 
     val ticketLiveData = MutableLiveData<List<Ticket>>()
     private val general : String = "general"
