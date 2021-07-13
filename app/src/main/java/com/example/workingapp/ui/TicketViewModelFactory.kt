@@ -7,7 +7,7 @@ import com.example.workingapp.data.AppDatabase
 import com.example.workingapp.data.RoomRepository
 
 
-@Suppress("UNCHECKED_CAST")
+/*@Suppress("UNCHECKED_CAST")
 class TicketViewModelFactory (private val applicationContext : Context) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>) : T {
@@ -18,4 +18,4 @@ class TicketViewModelFactory (private val applicationContext : Context) : ViewMo
 
     }
 
-}
+}*/
