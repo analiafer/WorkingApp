@@ -1,11 +1,13 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityMainBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
@@ -16,8 +18,21 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
     private lateinit var ticketAdapter: TicketAdapter
     private val viewModel: AddTicketViewModel by viewModel()
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+    private lateinit var modoOscuro: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        modoOscuro = if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+            "off"
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+            "on"
+        }
+
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMain.root)
@@ -32,6 +47,10 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         viewModel.getAll()
     }
 
+    fun restartApp(){
+        val i = Intent(getApplicationContext(), MainActivity::class.java)
+        startActivity(i)
+    }
 
     private fun setListener() {
         /*boton Ari para ir al nuevo ticket*/
@@ -41,8 +60,24 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         }
 
         bindingMain.tbTicket.setOnMenuItemClickListener{ item ->
-            if (item.itemId== R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
-             super.onOptionsItemSelected(item)
+            when (item.itemId){
+                R.id.option_celendar ->{
+                    startActivity(Intent(this, ClimaActivity::class.java))
+                }
+                R.id.modoOscuro -> {
+                    if (sharedpref.loadNightModeState() == true){
+                        modoOscuro = "off"
+                    }
+                    if(modoOscuro=="on"){
+                        sharedpref.setNightModeState(true)
+                        restartApp()
+                    }else{
+                        sharedpref.setNightModeState(false)
+                        restartApp()
+                    }
+                }
+            }
+            super.onOptionsItemSelected(item)
         }
 
         val navigationBottom = bindingMain.bottomNavigation

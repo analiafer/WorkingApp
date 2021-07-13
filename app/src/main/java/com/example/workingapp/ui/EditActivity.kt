@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.workingapp.R
 import com.example.workingapp.Working
 import com.example.workingapp.data.AppDatabase
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
 import kotlinx.coroutines.Dispatchers.IO
@@ -27,9 +29,19 @@ class EditActivity : AppCompatActivity() {
     private lateinit var bindingEditTicket: ActivityEditBinding
     private var idUpTicket: Long = 0
 
-
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+    private lateinit var modoOscuro: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
         bindingEditTicket = ActivityEditBinding.inflate(layoutInflater)
         setContentView(bindingEditTicket.root)

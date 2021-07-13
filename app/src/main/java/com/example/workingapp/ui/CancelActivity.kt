@@ -42,12 +42,6 @@ class CancelActivity : AppCompatActivity(){
         setListener()
     }
 
-    fun restartApp(){
-        val i = Intent(getApplicationContext(), MainActivity::class.java)
-        startActivity(i)
-        finish()
-    }
-
     private fun setListener() {
        /* bindingCancel.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
