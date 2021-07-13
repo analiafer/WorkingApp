@@ -21,20 +21,21 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
 
     override suspend fun getAll(): List<Ticket> {
         return dao.getAll().map {
-            Ticket(id = it.id,
-                   titulo = it.titulo,
-                   autor = it.autor,
-                   descripcion = it.descripcion,
-                   fechahora = it.fechahora)
+            Ticket(
+                id = it.id,
+                titulo = it.titulo,
+                autor = it.autor,
+                descripcion = it.descripcion,
+                fechahora = it.fechahora
+            )
         }
     }
 
-    override fun getById(ticketID: Long): TicketEntity {
+    override suspend fun getById(ticketID: Long): TicketEntity {
         return dao.getById(ticketID)
-
     }
 
-    override fun delete(ticket: TicketEntity) {
+    override suspend fun delete(ticket: TicketEntity) {
         dao.delete(ticket)
     }
 
@@ -47,6 +48,5 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
             fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())
         )
         dao.update(entity)
-
     }
 }

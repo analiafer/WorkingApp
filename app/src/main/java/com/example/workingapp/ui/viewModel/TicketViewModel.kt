@@ -1,4 +1,4 @@
-package com.example.workingapp.ui
+package com.example.workingapp.ui.viewModel
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
@@ -12,40 +12,35 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TicketViewModel (private val repository: TicketsRepository) : ViewModel(){
+class TicketViewModel(private val repository: TicketsRepository) : ViewModel() {
 
     val ticketLiveData = MutableLiveData<List<Ticket>>()
     val ticket = MutableLiveData<TicketEntity>()
 
     @SuppressLint("SimpleDateFormat")
-    fun saveTicket(titulo: String, autor : String, contenido : String){
+    fun saveTicket(titulo: String, autor: String, contenido: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.save(TicketEntity(titulo = titulo,
-                                         autor = autor,
-                                         descripcion = contenido,
-                                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())))
+            repository.save(
+                TicketEntity(
+                    titulo = titulo,
+                    autor = autor,
+                    descripcion = contenido,
+                    fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())
+                )
+            )
             ticketLiveData.value = repository.getAll()
         }
     }
 
-    fun getAll(){
+    fun getAll() {
         viewModelScope.launch(Dispatchers.IO) {
             ticketLiveData.value = repository.getAll()
         }
     }
 
-    fun getById(ID: Long){
-        ticket.value = repository.getById(ID)
-    }
-
-    fun delete(ticket: TicketEntity){
-        repository.delete(ticket)
-    }
-
-    fun updateTicket(ticket: TicketEntity){
+    fun updateTicket(ticket: TicketEntity) {
         repository.update(ticket)
     }
-
 
 
 }

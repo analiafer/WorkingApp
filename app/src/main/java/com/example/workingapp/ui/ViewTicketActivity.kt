@@ -2,17 +2,17 @@ package com.example.workingapp.ui
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
-    private val viewModel: TicketViewModel by viewModel()
+    private val viewModel: ViewTicketViewModel by viewModel()
     private var idTicket: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,11 +26,6 @@ class ViewTicketActivity : AppCompatActivity() {
         viewModel.getById(idTicket)
         setObserver()
         setListener()
-        bindingViewTicket.btnEditTicket.setOnClickListener(){
-            val intentEdit = Intent(this, EditActivity::class.java)
-            intentEdit.putExtra("IdTicketEdit",idTicket)
-            startActivity(intentEdit)
-        }
     }
 
     //función que setea los datos en la base de datos con los elementos del activity.
@@ -44,7 +39,7 @@ class ViewTicketActivity : AppCompatActivity() {
     }
 
     //función que se encarga del comportamiento de los botones de la barra.
-    //Uno borra el ticket, el otro vuelve atrás.
+//Uno borra el ticket, el otro vuelve atrás.
     private fun setListener() {
         bindingViewTicket.tbTicketView.setOnMenuItemClickListener { item ->
             if (item.itemId == R.id.optionDeleteTicket) {
@@ -53,6 +48,12 @@ class ViewTicketActivity : AppCompatActivity() {
                 finish()
             } else finish()
             super.onOptionsItemSelected(item)
+        }
+
+        bindingViewTicket.btnEditTicket.setOnClickListener() {
+            val intentEdit = Intent(this, EditActivity::class.java)
+            intentEdit.putExtra("IdTicketEdit", idTicket)
+            startActivity(intentEdit)
         }
     }
 }

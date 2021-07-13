@@ -1,17 +1,9 @@
 package com.example.workingapp.ui
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import com.example.workingapp.Working
-import com.example.workingapp.data.AppDatabase
-import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.workingapp.ui.viewModel.TicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -29,10 +21,10 @@ class EditActivity : AppCompatActivity() {
         var appbarnav = bindingEditTicket.tbTicketEdit
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        updateTicket()
+        //updateTicket()
     }
 
-    @SuppressLint("SimpleDateFormat")
+   /* @SuppressLint("SimpleDateFormat")
     private fun updateTicket(){
         val idDetalle = intent.getLongExtra("IdTicketEdit", 0)
         idUpTicket = idDetalle
@@ -60,7 +52,7 @@ class EditActivity : AppCompatActivity() {
             }
 
         })
-    }
+    }*/
 
 
 }

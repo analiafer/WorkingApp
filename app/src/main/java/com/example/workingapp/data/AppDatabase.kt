@@ -14,6 +14,6 @@ import androidx.room.RoomDatabase
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun ticketDao() : TicketDao
+    abstract fun ticketDao(): TicketDao
 
 }

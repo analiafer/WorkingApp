@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityNewTicketBinding
+import com.example.workingapp.ui.viewModel.AddTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class NewTicketActivity : AppCompatActivity() {

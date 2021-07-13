@@ -6,9 +6,9 @@ import com.example.workingapp.model.Ticket
 interface TicketsRepository {
 
     //Acá van todas las funciones
-    suspend fun save (ticket: TicketEntity)
-    suspend fun getAll() : List<Ticket>
-    fun getById(ticketID: Long): TicketEntity
-    fun delete (ticket: TicketEntity)
-    fun update (ticket: TicketEntity)
+    suspend fun save(ticket: TicketEntity)
+    suspend fun getAll(): List<Ticket>
+    suspend fun getById(ticketID: Long): TicketEntity
+    suspend fun delete(ticket: TicketEntity)
+    fun update(ticket: TicketEntity)
 }

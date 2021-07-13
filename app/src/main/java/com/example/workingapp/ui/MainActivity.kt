@@ -12,6 +12,7 @@ import com.example.workingapp.databinding.ActivityMainBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
 import com.example.workingapp.ui.*
+import com.example.workingapp.ui.viewModel.AddTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
