@@ -93,21 +93,6 @@ class EditActivity : AppCompatActivity() {
                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
                         estado = estadoTicket
                 )
-
-                viewModel.updateTicket(ticket)
-
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-
-                GlobalScope.launch {
-                    val working = Working()
-                    val database = working.dataBase(this@EditActivity)
-                    database.ticketDao().update(ticket)
-                }
-
-
-                finish()
-
                 val titulo = bindingEditTicket.etTitulo.text.toString()
                 val autor = bindingEditTicket.etAutor.text.toString()
                 val contenido = bindingEditTicket.etDescripcion.text.toString()
