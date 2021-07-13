@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="tutorial">
+
+        <attr name="backgroundClima" format="color"/>
+        <attr name="buttonPronostico" format="color"/>
+        <attr name="btn_addticket" format="color"/>
+        <attr name="bottom_navigation_icon_tint" format="color"/>
+        <attr name="backgroundtextticket" format="color"/>
+        <attr name="bottom_navigation" format="color"/>
+        <attr name="toolbar" format="color"/>
+        <attr name="backgroundcolor" format="color"/>
+        <attr name="cardbackgroundcolor" format="color"/>
+        <attr name="textcolor" format="color"/>
+        <attr name="tintcolor" format="color"/>
+        <attr name="texthint" format="color"/>
+        <attr name="buttoncolor" format="color"/>
+        <attr name="cajadetexto" format="color"/>
+    </declare-styleable>
+
+</resources>

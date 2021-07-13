@@ -8,6 +8,11 @@ import android.widget.RadioButton
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.Working
+<<<<<<< HEAD
+=======
+import com.example.workingapp.data.AppDatabase
+import com.example.workingapp.data.SharedPref
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
 import kotlinx.coroutines.GlobalScope
@@ -22,9 +27,24 @@ class EditActivity : AppCompatActivity() {
     private val viewModel: EditActivityViewModel by viewModel()
     private lateinit var bindingEditTicket: ActivityEditBinding
     private var idUpTicket: Long = 0
+<<<<<<< HEAD
     private var estadoTicket : String = " "
+=======
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+    private lateinit var modoOscuro: String
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
         bindingEditTicket = ActivityEditBinding.inflate(layoutInflater)
         setContentView(bindingEditTicket.root)

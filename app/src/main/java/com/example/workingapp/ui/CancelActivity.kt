@@ -1,8 +1,10 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+<<<<<<< HEAD
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.*
@@ -10,16 +12,42 @@ import com.example.workingapp.databinding.ActivityCancelBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
+=======
+import android.widget.Switch
+import com.example.workingapp.*
+import com.example.workingapp.data.SharedPref
+
+import com.example.workingapp.databinding.ActivityCancelBinding
+import com.example.workingapp.databinding.ActivityMainBinding
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 
 class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener{
 
+    private lateinit var bindingMain: ActivityMainBinding
     private lateinit var bindingCancel: ActivityCancelBinding
+<<<<<<< HEAD
     private lateinit var ticketAdapter : TicketAdapter
     private val cancelVm : CancelViewModel by viewModel()
+=======
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private var xyz: Switch? = null
+    internal lateinit var sharedpref: SharedPref
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
         bindingCancel = ActivityCancelBinding.inflate(layoutInflater)
+        bindingMain = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(bindingCancel.root)
 
         val appbarnav = bindingCancel.tbTicket

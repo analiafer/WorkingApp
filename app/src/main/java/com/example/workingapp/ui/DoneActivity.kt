@@ -1,11 +1,20 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
+<<<<<<< HEAD
+=======
+
+import android.widget.LinearLayout
+import com.example.workingapp.data.SharedPref
+
+
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 import com.example.workingapp.databinding.ActivityDoneBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
@@ -17,7 +26,17 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var ticketAdapter : TicketAdapter
     private val doneVm : DoneViewModel by viewModel()
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
         super.onCreate(savedInstanceState)
         bindingDone = ActivityDoneBinding.inflate(layoutInflater)
         setContentView(bindingDone.root)
@@ -38,6 +57,13 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
 
 
     private fun setListener() {
+<<<<<<< HEAD
+=======
+        /*viewTicket.setOnClickListener {
+            var intent = Intent(this, ViewTicketActivity::class.java)
+            startActivity(intent)
+        }*/
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 
         val navigationBottom = bindingDone.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_realizados
@@ -94,6 +120,7 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
     }
+<<<<<<< HEAD
 
     private fun setupRecycler(){
         ticketAdapter = TicketAdapter(this)
@@ -102,6 +129,8 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
           this.adapter = this@DoneActivity.ticketAdapter
         }
     }
+=======
+>>>>>>> d423fb6c325eafe7761c3aab2ee1e3980de30a49
 
     override fun onItemClick(ticket: Ticket) {
         val intentDone = Intent (this, ViewTicketActivity::class.java)

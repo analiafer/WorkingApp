@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
     tools:context=".ui.EnProcesoActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_ticket"
-        android:background="#2180F3"
+        android:background="?attr/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,6 +30,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tb_ticket"
         tools:layout_editor_absoluteX="0dp"
+        android:background="?attr/backgroundcolor"
         tools:listitem="@layout/row_ticket">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -38,9 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="?attr/bottom_navigation"
         app:menu="@menu/bottom_navigation"
         tools:layout_editor_absoluteX="0dp"
-        android:background="#D1CDCD"
         app:labelVisibilityMode="selected"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
