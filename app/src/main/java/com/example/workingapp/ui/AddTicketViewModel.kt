@@ -14,10 +14,11 @@ import java.util.*
 class AddTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
 
     val ticketLiveData = MutableLiveData<List<Ticket>>()
+    private val general : String = "general"
 
     fun getAll(){
         viewModelScope.launch {
-            ticketLiveData.value = repository.getAll()
+            ticketLiveData.value = repository.getByEstado(general)
         }
 
     }
@@ -28,10 +29,11 @@ class AddTicketViewModel  (private val repository: TicketsRepository) : ViewMode
             repository.save(TicketEntity(titulo = titulo,
                                          autor = autor,
                                          descripcion = contenido,
-                                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())))
+                                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
+                                         estado = "general"
+                                         )
+            )
             ticketLiveData.value = repository.getAll()
         }
-
     }
-
 }
