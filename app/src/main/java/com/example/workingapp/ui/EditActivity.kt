@@ -1,57 +1,42 @@
 package com.example.workingapp.ui
-
 import android.annotation.SuppressLint
+import android.app.Application
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Switch
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.example.workingapp.R
+import com.example.workingapp.Working
 import com.example.workingapp.data.AppDatabase
-import com.example.workingapp.data.SharedPref
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
-import com.example.workingapp.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.Dispatcher
 import java.text.SimpleDateFormat
 import java.util.*
+import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.ext.scope
 
 
 class EditActivity : AppCompatActivity() {
-    private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
+    private val viewModel: EditActivityViewModel by viewModel()
     private lateinit var bindingEditTicket: ActivityEditBinding
-    private lateinit var bindingMain: ActivityMainBinding
-
     private var idUpTicket: Long = 0
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private var xyz: Switch? = null
-    internal lateinit var sharedpref: SharedPref
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        sharedpref = SharedPref(this)
-        if(sharedpref.loadNightModeState()==true){
-            setTheme(R.style.DarkTheme_WorkingApp)
-        }else{
-            setTheme(R.style.Theme_WorkingApp)
-        }
-
         super.onCreate(savedInstanceState)
         bindingEditTicket = ActivityEditBinding.inflate(layoutInflater)
-        bindingMain = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(bindingEditTicket.root)
         var appbarnav = bindingEditTicket.tbTicketEdit
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         updateTicket()
-    }
-
-    fun restartApp(){
-        val i = Intent(getApplicationContext(), MainActivity::class.java)
-        startActivity(i)
-        finish()
     }
 
     @SuppressLint("SimpleDateFormat")
@@ -76,8 +61,12 @@ class EditActivity : AppCompatActivity() {
                 viewModel.updateTicket(ticket)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                val database = AppDatabase.getDatabase(this)
-                database.ticketDao().update(ticket)
+                GlobalScope.launch {
+                    var working = Working()
+                    val database = working.dataBase(this@EditActivity)
+                    database.ticketDao().update(ticket)
+                }
+
 
             }
 

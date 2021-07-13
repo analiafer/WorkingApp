@@ -1,41 +1,23 @@
 package com.example.workingapp.ui
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Switch
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
-import com.example.workingapp.data.SharedPref
-import com.example.workingapp.databinding.ActivityMainBinding
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
-    private lateinit var bindingMain: ActivityMainBinding
-
-    private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
+    private val viewModel: TicketViewModel by viewModel()
     private var idTicket: Long = 0
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private var xyz: Switch? = null
-    internal lateinit var sharedpref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        sharedpref = SharedPref(this)
-        if(sharedpref.loadNightModeState()==true){
-            setTheme(R.style.DarkTheme_WorkingApp)
-        }else{
-            setTheme(R.style.Theme_WorkingApp)
-        }
-
         super.onCreate(savedInstanceState)
         bindingViewTicket = ActivityViewTicketBinding.inflate(layoutInflater)
-        bindingMain = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(bindingViewTicket.root)
         //Guardamos en una variable los datos del ID del Ticket pasados desde la otra activity.
         val idDetalle = intent.getLongExtra("ID", 0)
@@ -49,12 +31,6 @@ class ViewTicketActivity : AppCompatActivity() {
             intentEdit.putExtra("IdTicketEdit",idTicket)
             startActivity(intentEdit)
         }
-    }
-
-    fun restartApp(){
-        val i = Intent(getApplicationContext(), MainActivity::class.java)
-        startActivity(i)
-        finish()
     }
 
     //función que setea los datos en la base de datos con los elementos del activity.

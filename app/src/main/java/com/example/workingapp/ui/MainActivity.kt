@@ -1,44 +1,23 @@
 package com.example.workingapp.ui
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-
 import android.os.Bundle
-import android.widget.Switch
-import androidx.activity.viewModels
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
-import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityMainBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
 import com.example.workingapp.ui.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
     private lateinit var ticketAdapter: TicketAdapter
-
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private var xyz: Switch? = null
-    internal lateinit var sharedpref: SharedPref
-    private lateinit var modoOscuro: String
-
-    private val viewModel: TicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
-    //private val addViewModel: AddTicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
+    private val viewModel: AddTicketViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        sharedpref = SharedPref(this)
-        modoOscuro = if(sharedpref.loadNightModeState()==true){
-            setTheme(R.style.DarkTheme_WorkingApp)
-            "off"
-        }else{
-            setTheme(R.style.Theme_WorkingApp)
-            "on"
-        }
-
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMain.root)
@@ -46,12 +25,6 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         setListener()
         observer()
         viewModel.getAll()
-    }
-
-    fun restartApp(){
-        val i = Intent(getApplicationContext(), MainActivity::class.java)
-        startActivity(i)
-        finish()
     }
 
     override fun onResume() {
@@ -68,24 +41,8 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         }
 
         bindingMain.tbTicket.setOnMenuItemClickListener{ item ->
-            when (item.itemId){
-                R.id.option_celendar ->{
-                    startActivity(Intent(this, ClimaActivity::class.java))
-                }
-                R.id.modoOscuro -> {
-                    if (sharedpref.loadNightModeState() == true){
-                        modoOscuro = "off"
-                    }
-                    if(modoOscuro=="on"){
-                        sharedpref.setNightModeState(true)
-                        restartApp()
-                    }else{
-                        sharedpref.setNightModeState(false)
-                        restartApp()
-                    }
-                }
-            }
-            super.onOptionsItemSelected(item)
+            if (item.itemId== R.id.option_celendar) startActivity(Intent(this, ClimaActivity::class.java))
+             super.onOptionsItemSelected(item)
         }
 
         val navigationBottom = bindingMain.bottomNavigation

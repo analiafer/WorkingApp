@@ -21,7 +21,11 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
 
     override suspend fun getAll(): List<Ticket> {
         return dao.getAll().map {
-            Ticket(id = it.id, titulo = it.titulo, autor = it.autor, descripcion = it.descripcion, fechahora = it.fechahora)
+            Ticket(id = it.id,
+                   titulo = it.titulo,
+                   autor = it.autor,
+                   descripcion = it.descripcion,
+                   fechahora = it.fechahora)
         }
     }
 
@@ -35,7 +39,7 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
     }
 
     @SuppressLint("SimpleDateFormat")
-    override fun update(ticket: TicketEntity) {
+    override suspend fun update(ticket: TicketEntity) {
         val entity = TicketEntity(
             titulo = ticket.titulo,
             autor = ticket.autor,

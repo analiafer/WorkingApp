@@ -25,10 +25,11 @@ class AddTicketViewModel  (private val repository: TicketsRepository) : ViewMode
     @SuppressLint("SimpleDateFormat")
     fun saveTicket(titulo: String, autor : String, contenido : String){
         viewModelScope.launch {
-            repository.save(TicketEntity(titulo = titulo, autor = autor, descripcion = contenido,fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())))
+            repository.save(TicketEntity(titulo = titulo,
+                                         autor = autor,
+                                         descripcion = contenido,
+                                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())))
             ticketLiveData.value = repository.getAll()
         }
-
     }
-
 }

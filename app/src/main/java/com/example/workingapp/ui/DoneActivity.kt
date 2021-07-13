@@ -1,6 +1,5 @@
 package com.example.workingapp.ui
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,67 +8,42 @@ import android.os.Bundle
 import com.example.workingapp.R
 
 import android.widget.LinearLayout
-import android.widget.Switch
 import androidx.recyclerview.widget.RecyclerView
-import com.example.workingapp.data.SharedPref
 
 
 import com.example.workingapp.databinding.ActivityDoneBinding
-import com.example.workingapp.databinding.ActivityMainBinding
+
 
 
 class DoneActivity : AppCompatActivity() {
 
-    private lateinit var bindingMain: ActivityMainBinding
     private lateinit var bindingDone: ActivityDoneBinding
     private lateinit var viewTicket: LinearLayout
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    private var xyz: Switch? = null
-    internal lateinit var sharedpref: SharedPref
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        sharedpref = SharedPref(this)
-        if(sharedpref.loadNightModeState()==true){
-            setTheme(R.style.DarkTheme_WorkingApp)
-        }else{
-            setTheme(R.style.Theme_WorkingApp)
-        }
-
         super.onCreate(savedInstanceState)
         bindingDone = ActivityDoneBinding.inflate(layoutInflater)
-        bindingMain = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(bindingDone.root)
         var appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
-        setListener()
+
+
+
+
 
         /*Ari recycler
         val recycler = findViewById<RecyclerView>(R.id.recycler)
          recycler.adapter =*/
-
     }
 
-    fun restartApp(){
-        val i = Intent(getApplicationContext(), MainActivity::class.java)
-        startActivity(i)
-        finish()
-    }
 
-    private fun setViews() {
-       // viewTicket = findViewById(R.id.viewTicket)
 
-    }
-
-    private fun setListener() {
-       /* viewTicket.setOnClickListener {
+    /*private fun setListener() {
+        viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
-        }*/
+        }
 
         val navigationBottom = bindingDone.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_realizados
@@ -125,7 +99,7 @@ class DoneActivity : AppCompatActivity() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }
+    }*/
 
 
 }
