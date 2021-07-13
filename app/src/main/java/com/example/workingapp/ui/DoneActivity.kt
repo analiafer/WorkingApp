@@ -11,7 +11,9 @@ import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityDoneBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
+import com.example.workingapp.ui.viewModel.DoneViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
 

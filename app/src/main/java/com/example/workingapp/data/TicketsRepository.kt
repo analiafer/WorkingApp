@@ -8,8 +8,8 @@ interface TicketsRepository {
     //Acá van todas las funciones
     suspend fun save (ticket: TicketEntity)
     suspend fun getAll() : List<Ticket>
-    fun getById(ticketID: Long): TicketEntity
-    fun delete (ticket: TicketEntity)
+    suspend fun getById(ticketID: Long): TicketEntity
+    suspend fun delete(ticket: TicketEntity)
     suspend fun update (ticket: TicketEntity)
     suspend fun getByEstado(estado: String) : List<Ticket>
 }

@@ -11,6 +11,7 @@ import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityEnProcesoBinding
 import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.recyclerView.TicketAdapter
+import com.example.workingapp.ui.viewModel.EnProcesoViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {

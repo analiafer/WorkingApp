@@ -17,9 +17,6 @@
     app:layout_constraintHorizontal_bias="0.476"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/tbPronostico">
-    <!-- No sé como hacer para que la distancia sea igual de arriba que de abajo
-    quiero decir, si pongo margen de 5dp, se suma con el siguiente, pero
-    el margin de la de arriba de todo y la de abajo es sólo 5 y no 10 -->
 
     <TextView
         android:id="@+id/txtDia"

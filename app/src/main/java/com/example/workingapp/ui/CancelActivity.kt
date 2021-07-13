@@ -14,6 +14,7 @@ import android.widget.Switch
 import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityCancelBinding
 import com.example.workingapp.databinding.ActivityMainBinding
+import com.example.workingapp.ui.viewModel.CancelViewModel
 
 
 class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener{

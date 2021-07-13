@@ -39,15 +39,15 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
                     descripcion = it.descripcion,
                     fechahora = it.fechahora,
                     estado = it.estado)
+
         }
     }
 
-    override fun getById(ticketID: Long): TicketEntity {
+    override suspend fun getById(ticketID: Long): TicketEntity {
         return dao.getById(ticketID)
-
     }
 
-    override fun delete(ticket: TicketEntity) {
+    override suspend fun delete(ticket: TicketEntity) {
         dao.delete(ticket)
     }
 
@@ -61,7 +61,6 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
             estado = ticket.estado
         )
         dao.update(entity)
-
     }
 
 

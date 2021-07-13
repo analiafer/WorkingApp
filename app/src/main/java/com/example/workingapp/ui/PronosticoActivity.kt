@@ -12,7 +12,7 @@ import com.example.workingapp.databinding.ActivityPronosticoClimaBinding
 import com.example.workingapp.model.Pronostico
 import com.example.workingapp.model.WeatherList
 import com.example.workingapp.model.WeatherModel
-import com.example.workingapp.ui.ClimaViewModel
+import com.example.workingapp.ui.viewModel.ClimaViewModel
 import com.example.workingapp.ui.recyclerView.PronosticoAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 import retrofit2.Response

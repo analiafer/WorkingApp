@@ -13,6 +13,7 @@ import com.example.workingapp.R
 import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityClimaBinding
 import com.example.workingapp.model.WeatherList
+import com.example.workingapp.ui.viewModel.ClimaViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*

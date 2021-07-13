@@ -1,4 +1,4 @@
-package com.example.workingapp.ui
+package com.example.workingapp.ui.viewModel
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
@@ -35,5 +35,7 @@ class NewTicketViewModel  (private val repository: TicketsRepository) : ViewMode
             )
             ticketLiveData.value = repository.getAll()
         }
+
     }
+
 }
