@@ -46,21 +46,6 @@ class EditActivity : AppCompatActivity() {
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         updateTicket()
-
-        xyz = bindingMain.switchModo as Switch?
-        if (sharedpref.loadNightModeState() == true){
-            xyz!!.isChecked = true
-        }
-        xyz!!.setOnCheckedChangeListener{
-                buttonView, isChecked ->
-            if(isChecked){
-                sharedpref.setNightModeState(true)
-                restartApp()
-            }else{
-                sharedpref.setNightModeState(false)
-                restartApp()
-            }
-        }
     }
 
     fun restartApp(){

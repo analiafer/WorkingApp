@@ -19,15 +19,6 @@
         tools:ignore="NotSibling"
         tools:layout_editor_absoluteX="62dp">
 
-        <Switch
-            android:id="@+id/switchModo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Modo"
-            tools:layout_editor_absoluteX="273dp"
-            tools:layout_editor_absoluteY="16dp"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -52,6 +43,7 @@
         android:clickable="true"
         android:contentDescription="TODO"
         android:focusable="true"
+        android:backgroundTint="?attr/btn_addticket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
