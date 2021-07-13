@@ -12,4 +12,5 @@
     <color name="background_app">#f1f1f1</color>
     <color name="Background_icon_toolbar_top">#F2FFFFFF</color>
     <color name="background_navigation">#D1CDCD</color>
+    <color name="splashscreen">#589df3</color>
 </resources>

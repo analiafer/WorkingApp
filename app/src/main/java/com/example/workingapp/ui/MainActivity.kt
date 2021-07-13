@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private val viewModel: AddTicketViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(1200)
+        setTheme(R.style.Theme_WorkingApp)
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingMain.root)
