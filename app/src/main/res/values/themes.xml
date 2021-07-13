@@ -52,7 +52,7 @@
         <!-- Dark Theme. -->
         <item name="backgroundClima">#575757</item>
         <item name="buttonPronostico">#C92C2B2B</item>
-        <item name="btn_addticket">#777C7C7C</item>
+        <item name="btn_addticket">#2180F3</item>
         <item name="backgroundtextticket">#6542585A</item>
         <item name="bottom_navigation">#595656</item>
         <item name="toolbar">#616365</item>
