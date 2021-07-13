@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.Working
@@ -61,16 +62,20 @@ class EditActivity : AppCompatActivity() {
                     descripcion = bindingEditTicket.etDescripcion.text.toString(),
                     fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())
                 )
-
-                viewModel.updateTicket(ticket)
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                GlobalScope.launch {
-                    var working = Working()
-                    val database = working.dataBase(this@EditActivity)
-                    database.ticketDao().update(ticket)
+                val titulo = bindingEditTicket.etTitulo.text.toString()
+                val autor = bindingEditTicket.etAutor.text.toString()
+                val contenido = bindingEditTicket.etDescripcion.text.toString()
+                if (titulo.isEmpty() || autor.isEmpty() || contenido.isEmpty()) {
+                    Toast.makeText(this, R.string.toastInfoVacia, Toast.LENGTH_SHORT).show()
+                } else {
+                    viewModel.updateTicket(ticket)
+                    GlobalScope.launch {
+                        var working = Working()
+                        val database = working.dataBase(this@EditActivity)
+                        database.ticketDao().update(ticket)
+                    }
+                    finish()
                 }
-                finish()
             }
         })
     }

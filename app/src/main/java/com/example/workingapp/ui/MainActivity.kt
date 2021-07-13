@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var modoOscuro: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(1200)
+        Thread.sleep(1000)
         setTheme(R.style.Theme_WorkingApp)
 
         sharedpref = SharedPref(this)
