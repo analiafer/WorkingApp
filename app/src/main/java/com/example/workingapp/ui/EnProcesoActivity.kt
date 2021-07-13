@@ -1,15 +1,30 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import com.example.workingapp.R
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityEnProcesoBinding
 
 class EnProcesoActivity : AppCompatActivity() {
     private lateinit var bindingProceso: ActivityEnProcesoBinding
+    private lateinit var viewTicket: LinearLayout
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
         bindingProceso = ActivityEnProcesoBinding.inflate(layoutInflater)
         setContentView(bindingProceso.root)
@@ -17,14 +32,15 @@ class EnProcesoActivity : AppCompatActivity() {
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        setListener()
     }
 
-    /*private fun setListener() {
-        bindingProceso.viewTicket.setOnClickListener {
+    private fun setListener() {
+       /* bindingProceso.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
         }
-
+*/
         val navigationBottom = bindingProceso.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_enproceso
         navigationBottom.setOnNavigationItemSelectedListener { item ->
@@ -76,5 +92,5 @@ class EnProcesoActivity : AppCompatActivity() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }*/
+    }
 }

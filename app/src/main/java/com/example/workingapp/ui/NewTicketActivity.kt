@@ -1,10 +1,12 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.workingapp.R
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityNewTicketBinding
 import com.example.workingapp.ui.viewModel.AddTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -13,8 +15,18 @@ class NewTicketActivity : AppCompatActivity() {
     private lateinit var bindingNewTicket : ActivityNewTicketBinding
     private val vm: AddTicketViewModel by viewModel()
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
+
         super.onCreate(savedInstanceState)
 
         bindingNewTicket = ActivityNewTicketBinding.inflate(layoutInflater)

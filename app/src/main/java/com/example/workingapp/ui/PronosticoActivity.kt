@@ -1,10 +1,13 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
+import com.example.workingapp.R
+import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityPronosticoClimaBinding
 import com.example.workingapp.model.Pronostico
 import com.example.workingapp.model.WeatherList
@@ -27,10 +30,22 @@ class PronosticoActivity : AppCompatActivity(){
     private val variableDia: ArrayList<String> = arrayListOf<String>()
     private val numbers = arrayOf("8", "16", "24", "32")
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+    private lateinit var modoOscuro: String
+
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
+        sharedpref = SharedPref(this)
+        modoOscuro = if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+            "off"
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+            "on"
+        }
+        super.onCreate(savedInstanceState)
 
         bindingPronostico = ActivityPronosticoClimaBinding.inflate(layoutInflater)
         setContentView(bindingPronostico.root)

@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.workingapp.data.*
 import com.example.workingapp.data.service.DataSource
+import com.example.workingapp.ui.*
 import com.example.workingapp.ui.viewModel.AddTicketViewModel
 import com.example.workingapp.ui.viewModel.ClimaViewModel
 import com.example.workingapp.ui.viewModel.TicketViewModel
@@ -29,6 +30,8 @@ class Working : Application() {
         viewModel { TicketViewModel(get()) }
         viewModel { AddTicketViewModel(get()) }
         viewModel { ViewTicketViewModel(get()) }
+        viewModel { EditActivityViewModel(get()) }
+
 
     }
 

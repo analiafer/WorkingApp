@@ -20,5 +20,5 @@ interface TicketDao {
     suspend fun delete(ticket: TicketEntity)
 
     @Update
-    fun update(ticket: TicketEntity)
+    suspend fun update(ticket: TicketEntity)
 }

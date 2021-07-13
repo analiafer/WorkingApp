@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
     tools:context=".ui.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_ticket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2180F3"
+        android:background="?attr/toolbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:menu="@menu/appbar_top"
         app:title="@string/app_name"
         app:titleTextColor="#F4F4F4"
         tools:ignore="NotSibling"
-        tools:layout_editor_absoluteX="-16dp">
+        tools:layout_editor_absoluteX="62dp">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -25,6 +25,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="?attr/backgroundcolor"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -42,6 +43,7 @@
         android:clickable="true"
         android:contentDescription="TODO"
         android:focusable="true"
+        android:backgroundTint="?attr/btn_addticket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
@@ -54,11 +56,10 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D1CDCD"
+        android:background="?attr/bottom_navigation"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation"
         tools:layout_editor_absoluteX="0dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

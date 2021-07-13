@@ -9,7 +9,7 @@ import retrofit2.Response
 class ClimaViewModel(private val repo: RepositorioClima): ViewModel(){
 
     val clima = liveData<Response<WeatherModel>> {
-        val response = repo.getWeather("Londres")
+        val response = repo.getWeather("Buenos Aires")
         if(response.isSuccessful){
             response.body()
             emit(response)

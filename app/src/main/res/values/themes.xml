@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.WorkingApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.WorkingApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#2180F3</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -16,6 +16,52 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="backgroundClima">#8F03A9F4</item>
+        <item name="buttonPronostico">#4AFFFFFF</item>
+        <item name="btn_addticket">#2180F3</item>
+        <item name="bottom_navigation_icon_tint">#77000000</item>
+        <item name="backgroundtextticket">#6500BCD4</item>
+        <item name="bottom_navigation">#D1CDCD</item>
+        <item name="toolbar">#2180F3</item>
+        <item name="backgroundcolor">#ffffff</item>
+        <item name="cardbackgroundcolor">#ffffff</item>
+        <item name="textcolor">#4E4C4C</item>
+        <item name="tintcolor">#000000</item>
+        <item name="buttoncolor">#2180F3</item>
+        <item name="cajadetexto">#65D0D8D0</item>
+        <item name="texthint">#888A88</item>
+    </style>
+
+
+    <!--Dark Theme-->
+    <style name="DarkTheme.WorkingApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#2180F3</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!--Color de flecha y puntos en la toolbar -->
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <!--Color del texto en la barra -->
+        <item name="android:textColorPrimary">#000000</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/background_toolbar_top</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Dark Theme. -->
+        <item name="backgroundClima">#575757</item>
+        <item name="buttonPronostico">#C92C2B2B</item>
+        <item name="btn_addticket">#777C7C7C</item>
+        <item name="backgroundtextticket">#6542585A</item>
+        <item name="bottom_navigation">#595656</item>
+        <item name="toolbar">#616365</item>
+        <item name="backgroundcolor">#303030</item>
+        <item name="cardbackgroundcolor">#424242</item>
+        <item name="textcolor">#ffffff</item>
+        <item name="buttoncolor">#9F414241</item>
+        <item name="cajadetexto">#9F414241</item>
+        <item name="texthint">#C9CCC9</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.WorkingApp">

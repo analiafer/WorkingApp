@@ -1,5 +1,6 @@
 package com.example.workingapp.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +9,7 @@ import android.os.Bundle
 import com.example.workingapp.R
 
 import android.widget.LinearLayout
-import androidx.recyclerview.widget.RecyclerView
+import com.example.workingapp.data.SharedPref
 
 
 import com.example.workingapp.databinding.ActivityDoneBinding
@@ -19,7 +20,17 @@ class DoneActivity : AppCompatActivity() {
     private lateinit var bindingDone: ActivityDoneBinding
     private lateinit var viewTicket: LinearLayout
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    internal lateinit var sharedpref: SharedPref
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        sharedpref = SharedPref(this)
+        if(sharedpref.loadNightModeState()==true){
+            setTheme(R.style.DarkTheme_WorkingApp)
+        }else{
+            setTheme(R.style.Theme_WorkingApp)
+        }
         super.onCreate(savedInstanceState)
         bindingDone = ActivityDoneBinding.inflate(layoutInflater)
         setContentView(bindingDone.root)
@@ -38,11 +49,11 @@ class DoneActivity : AppCompatActivity() {
 
 
 
-    /*private fun setListener() {
-        viewTicket.setOnClickListener {
+    private fun setListener() {
+        /*viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         val navigationBottom = bindingDone.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_realizados
@@ -98,7 +109,7 @@ class DoneActivity : AppCompatActivity() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }*/
+    }
 
 
 }
