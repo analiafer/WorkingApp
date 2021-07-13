@@ -1,10 +1,14 @@
 package com.example.workingapp
 
 import android.app.Application
-import com.example.workingapp.data.ClimaImpl
-import com.example.workingapp.data.RepositorioClima
+import android.content.Context
+import androidx.room.Room
+import com.example.workingapp.data.*
 import com.example.workingapp.data.service.DataSource
+import com.example.workingapp.ui.AddTicketViewModel
 import com.example.workingapp.ui.ClimaViewModel
+import com.example.workingapp.ui.TicketViewModel
+import com.example.workingapp.ui.ViewTicketViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.dsl.module
@@ -20,6 +24,12 @@ class Working : Application() {
         single <RepositorioClima> { ClimaImpl(get()) }
         viewModel{ ClimaViewModel(get()) }
 
+        single<TicketDao> {dataBase(get()).ticketDao()}
+        single<TicketsRepository>{RoomRepository(get())}
+        viewModel { TicketViewModel(get()) }
+        viewModel { AddTicketViewModel(get()) }
+        viewModel { ViewTicketViewModel(get()) }
+
     }
 
     override fun onCreate(){
@@ -33,4 +43,15 @@ class Working : Application() {
         }
     }
 
+     fun dataBase( context : Context) : AppDatabase {
+         return Room.databaseBuilder(
+             context,
+             AppDatabase::class.java,
+             "workingApplication"
+         )
+             .allowMainThreadQueries()
+             .build()
+    }
+
 }
+

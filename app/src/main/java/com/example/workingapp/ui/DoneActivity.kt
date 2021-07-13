@@ -27,8 +27,8 @@ class DoneActivity : AppCompatActivity() {
         var appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setViews()
-        setListener()
+
+
 
 
 
@@ -37,12 +37,9 @@ class DoneActivity : AppCompatActivity() {
          recycler.adapter =*/
     }
 
-    private fun setViews() {
-        viewTicket = findViewById(R.id.viewTicket)
 
-    }
 
-    private fun setListener() {
+    /*private fun setListener() {
         viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
@@ -102,7 +99,7 @@ class DoneActivity : AppCompatActivity() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }
+    }*/
 
 
 }

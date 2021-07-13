@@ -21,7 +21,11 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
 
     override suspend fun getAll(): List<Ticket> {
         return dao.getAll().map {
-            Ticket(id = it.id, titulo = it.titulo, autor = it.autor, descripcion = it.descripcion, fechahora = it.fechahora)
+            Ticket(id = it.id,
+                   titulo = it.titulo,
+                   autor = it.autor,
+                   descripcion = it.descripcion,
+                   fechahora = it.fechahora)
         }
     }
 

@@ -7,11 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
-    private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
+    private val viewModel: TicketViewModel by viewModel()
     private var idTicket: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

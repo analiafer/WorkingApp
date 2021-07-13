@@ -16,10 +16,10 @@ class EnProcesoActivity : AppCompatActivity() {
         var appbarnav = bindingProceso.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setListener()
+
     }
 
-    private fun setListener() {
+    /*private fun setListener() {
         bindingProceso.viewTicket.setOnClickListener {
             var intent = Intent(this, ViewTicketActivity::class.java)
             startActivity(intent)
@@ -76,5 +76,5 @@ class EnProcesoActivity : AppCompatActivity() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }
+    }*/
 }
