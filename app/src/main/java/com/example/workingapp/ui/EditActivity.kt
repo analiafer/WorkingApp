@@ -14,7 +14,7 @@ import java.util.*
 
 
 class EditActivity : AppCompatActivity() {
-    private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
+    private val viewModel: TicketViewModel by viewModels()
     private lateinit var bindingEditTicket: ActivityEditBinding
     private var idUpTicket: Long = 0
 

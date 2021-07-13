@@ -4,8 +4,7 @@ import android.app.Application
 import com.example.workingapp.data.RoomRepository
 import com.example.workingapp.data.TicketDao
 import com.example.workingapp.data.TicketDao_Impl
-import com.example.workingapp.model.TicketsRepository
-import com.example.workingapp.ui.viewModel.TicketViewModel
+import com.example.workingapp.data.TicketsRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.android.viewmodel.dsl.viewModel
