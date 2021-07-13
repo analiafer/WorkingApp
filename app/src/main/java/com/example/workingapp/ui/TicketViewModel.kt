@@ -23,7 +23,10 @@ class TicketViewModel (private val repository: TicketsRepository) : ViewModel(){
             repository.save(TicketEntity(titulo = titulo,
                                          autor = autor,
                                          descripcion = contenido,
-                                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())))
+                                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
+                                         estado = " "
+                                         )
+            )
             ticketLiveData.value = repository.getAll()
         }
     }

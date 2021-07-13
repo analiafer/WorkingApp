@@ -3,47 +3,41 @@ package com.example.workingapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
-
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.RecyclerView
-
-
 import com.example.workingapp.databinding.ActivityDoneBinding
+import com.example.workingapp.model.Ticket
+import com.example.workingapp.ui.recyclerView.TicketAdapter
+import org.koin.android.viewmodel.ext.android.viewModel
 
-
-
-class DoneActivity : AppCompatActivity() {
+class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
 
     private lateinit var bindingDone: ActivityDoneBinding
-    private lateinit var viewTicket: LinearLayout
+    private lateinit var ticketAdapter : TicketAdapter
+    private val doneVm : DoneViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingDone = ActivityDoneBinding.inflate(layoutInflater)
         setContentView(bindingDone.root)
-        var appbarnav = bindingDone.tbTicket
+        val appbarnav = bindingDone.tbTicket
         setSupportActionBar(appbarnav)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        setListener()
+        setupRecycler()
+        observer()
+        doneVm.getAllDone()
+    }
 
-
-
-
-        /*Ari recycler
-        val recycler = findViewById<RecyclerView>(R.id.recycler)
-         recycler.adapter =*/
+    override fun onResume() {
+        super.onResume()
+        doneVm.getAllDone()
     }
 
 
-
-    /*private fun setListener() {
-        viewTicket.setOnClickListener {
-            var intent = Intent(this, ViewTicketActivity::class.java)
-            startActivity(intent)
-        }
+    private fun setListener() {
 
         val navigationBottom = bindingDone.bottomNavigation
         navigationBottom.selectedItemId = R.id.option_realizados
@@ -99,8 +93,28 @@ class DoneActivity : AppCompatActivity() {
 
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
-    }*/
+    }
 
+    private fun setupRecycler(){
+        ticketAdapter = TicketAdapter(this)
+        with(bindingDone.recycler){
+          layoutManager = LinearLayoutManager(this@DoneActivity, LinearLayoutManager.VERTICAL, false)
+          this.adapter = this@DoneActivity.ticketAdapter
+        }
+    }
+
+    override fun onItemClick(ticket: Ticket) {
+        val intentDone = Intent (this, ViewTicketActivity::class.java)
+        intentDone.putExtra("ID", ticket.id)
+        startActivity(intentDone)
+    }
+
+    private fun observer(){
+        doneVm.doneLiveData.observe(this, Observer {
+            ticketAdapter.submitList(it)
+            ticketAdapter.notifyDataSetChanged()
+        })
+    }
 
 }
 

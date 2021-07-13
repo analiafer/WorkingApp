@@ -11,4 +11,5 @@ interface TicketsRepository {
     fun getById(ticketID: Long): TicketEntity
     fun delete (ticket: TicketEntity)
     suspend fun update (ticket: TicketEntity)
+    suspend fun getByEstado(estado: String) : List<Ticket>
 }
