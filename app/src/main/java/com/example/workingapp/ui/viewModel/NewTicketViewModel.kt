@@ -1,4 +1,4 @@
-package com.example.workingapp.ui
+package com.example.workingapp.ui.viewModel
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
+class NewTicketViewModel  (private val repository: TicketsRepository) : ViewModel(){
 
     val ticketLiveData = MutableLiveData<List<Ticket>>()
 

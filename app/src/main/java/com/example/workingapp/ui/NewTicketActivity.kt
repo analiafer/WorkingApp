@@ -4,16 +4,15 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.viewModels
 import com.example.workingapp.R
 import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityNewTicketBinding
-import com.example.workingapp.ui.viewModel.AddTicketViewModel
+import com.example.workingapp.ui.viewModel.NewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class NewTicketActivity : AppCompatActivity() {
-    private lateinit var bindingNewTicket : ActivityNewTicketBinding
-    private val vm: AddTicketViewModel by viewModel()
+    private lateinit var bindingNewTicket: ActivityNewTicketBinding
+    private val vm: NewTicketViewModel by viewModel()
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
@@ -21,9 +20,9 @@ class NewTicketActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         sharedpref = SharedPref(this)
-        if(sharedpref.loadNightModeState()==true){
+        if (sharedpref.loadNightModeState() == true) {
             setTheme(R.style.DarkTheme_WorkingApp)
-        }else{
+        } else {
             setTheme(R.style.Theme_WorkingApp)
         }
 
@@ -38,7 +37,7 @@ class NewTicketActivity : AppCompatActivity() {
         addDataToDatabase()
     }
 
-    private fun addDataToDatabase(){
+    private fun addDataToDatabase() {
 
         bindingNewTicket.btnSumarAceptar.setOnClickListener {
 
@@ -46,10 +45,10 @@ class NewTicketActivity : AppCompatActivity() {
             val autor = bindingNewTicket.etAutor.text.toString()
             val contenido = bindingNewTicket.etDescripcion.text.toString()
 
-            if(titulo.isEmpty() || autor.isEmpty() || contenido.isEmpty()){
+            if (titulo.isEmpty() || autor.isEmpty() || contenido.isEmpty()) {
                 Toast.makeText(this, R.string.toastInfoVacia, Toast.LENGTH_SHORT).show()
 
-            }else{
+            } else {
                 vm.saveTicket(titulo, autor, contenido)
                 finish()
             }

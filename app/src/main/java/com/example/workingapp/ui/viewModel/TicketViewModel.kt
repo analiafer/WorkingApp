@@ -34,13 +34,13 @@ class TicketViewModel(private val repository: TicketsRepository) : ViewModel() {
 
     fun getAll() {
         viewModelScope.launch(Dispatchers.IO) {
-            ticketLiveData.value = repository.getAll()
+            ticketLiveData.postValue(repository.getAll())
         }
     }
 
     fun updateTicket(ticket: TicketEntity) {
-        repository.update(ticket)
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.update(ticket)
+        }
     }
-
-
 }
