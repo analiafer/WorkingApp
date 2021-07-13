@@ -43,7 +43,6 @@
         android:clickable="true"
         android:contentDescription="TODO"
         android:focusable="true"
-        android:backgroundTint="?attr/btn_addticket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"

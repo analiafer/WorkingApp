@@ -28,7 +28,6 @@ class EditActivity : AppCompatActivity() {
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
-    private lateinit var modoOscuro: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

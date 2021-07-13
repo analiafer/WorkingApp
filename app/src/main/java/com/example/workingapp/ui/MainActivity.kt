@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     fun restartApp() {
         val i = Intent(getApplicationContext(), MainActivity::class.java)
         startActivity(i)
+        finish()
     }
 
     private fun setListener() {

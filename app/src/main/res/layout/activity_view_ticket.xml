@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_app">
+    android:background="?attr/backgroundcolor">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbTicketView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2180F3"
+        android:background="?attr/toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -22,19 +22,19 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/backgroundTextTicket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
         android:layout_marginVertical="5dp"
-        android:backgroundTint="@color/background_description_ticket"
+        android:backgroundTint="?attr/backgroundtextticket"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbTicketView">
+
         <TextView
             android:id="@+id/textTituloTicket"
             android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="10dp"
             android:text="@string/titulo_ticket"
-            android:textColor="@color/black"
+            android:textColor="?attr/textcolor"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -54,6 +54,7 @@
             android:layout_marginTop="45dp"
             android:layout_marginBottom="42dp"
             android:text="@string/descripcion_del_ticket"
+            android:textColor="?attr/textcolor"
             android:textSize="16sp" />
 
         <TextView
@@ -64,6 +65,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginBottom="8dp"
             android:text="@string/autor"
+            android:textColor="?attr/textcolor"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -75,6 +77,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginBottom="8dp"
             android:text="23/05/2021"
+            android:textColor="?attr/textcolor"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -92,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_gravity="bottom"
-            android:backgroundTint="@color/background_navigation"
+            android:backgroundTint="?attr/bottom_navigation"
             app:fabAlignmentMode="end"
             app:fabCradleMargin="10dp" />
 
