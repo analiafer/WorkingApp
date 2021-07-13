@@ -16,7 +16,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class EditActivity : AppCompatActivity() {
     private val viewModel: TicketViewModel by viewModel()
-    //private val viewModel: TicketViewModel by viewModels {TicketViewModelFactory(applicationContext)}
     private lateinit var bindingEditTicket: ActivityEditBinding
     private var idUpTicket: Long = 0
 

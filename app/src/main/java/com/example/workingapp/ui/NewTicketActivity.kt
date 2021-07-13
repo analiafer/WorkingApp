@@ -10,7 +10,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class NewTicketActivity : AppCompatActivity() {
     private lateinit var bindingNewTicket : ActivityNewTicketBinding
-    //private val vm: TicketViewModel by viewModels { TicketViewModelFactory(applicationContext)  }
     private val vm: AddTicketViewModel by viewModel()
 
 

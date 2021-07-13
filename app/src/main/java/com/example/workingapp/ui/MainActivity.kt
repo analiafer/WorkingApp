@@ -3,7 +3,6 @@ package com.example.workingapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-//import androidx.activity.viewModels
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.workingapp.R
@@ -16,10 +15,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
     private lateinit var bindingMain: ActivityMainBinding
     private lateinit var ticketAdapter: TicketAdapter
-
     private val viewModel: AddTicketViewModel by viewModel()
-    //private val viewModel: TicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
-    //private val addViewModel: AddTicketViewModel by viewModels{ TicketViewModelFactory(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

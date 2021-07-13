@@ -16,27 +16,4 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun ticketDao() : TicketDao
 
-    /*companion object {
-
-        private var db: AppDatabase? = null
-
-
-        fun getDatabase(context: Context): AppDatabase {
-
-            if (db == null) {
-                db = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "workingApplication"
-                )
-                    .allowMainThreadQueries()
-                    .build()
-            }
-
-            return db!!
-
-        }
-
-    }*/
-
 }
