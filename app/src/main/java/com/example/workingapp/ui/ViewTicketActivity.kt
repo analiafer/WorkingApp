@@ -22,9 +22,9 @@ class ViewTicketActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         sharedpref = SharedPref(this)
-        if(sharedpref.loadNightModeState()==true){
+        if (sharedpref.loadNightModeState() == true) {
             setTheme(R.style.DarkTheme_WorkingApp)
-        }else{
+        } else {
             setTheme(R.style.Theme_WorkingApp)
         }
 
@@ -66,6 +66,7 @@ class ViewTicketActivity : AppCompatActivity() {
             val intentEdit = Intent(this, EditActivity::class.java)
             intentEdit.putExtra("IdTicketEdit", idTicket)
             startActivity(intentEdit)
+            finish()
         }
     }
 }

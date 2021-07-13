@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.Working
@@ -92,6 +93,7 @@ class EditActivity : AppCompatActivity() {
                         fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
                         estado = estadoTicket
                 )
+
                 viewModel.updateTicket(ticket)
 
                 val intent = Intent(this, MainActivity::class.java)
@@ -105,6 +107,23 @@ class EditActivity : AppCompatActivity() {
 
 
                 finish()
+
+                val titulo = bindingEditTicket.etTitulo.text.toString()
+                val autor = bindingEditTicket.etAutor.text.toString()
+                val contenido = bindingEditTicket.etDescripcion.text.toString()
+
+                if (titulo.isEmpty() || autor.isEmpty() || contenido.isEmpty()) {
+                    Toast.makeText(this, R.string.toastInfoVacia, Toast.LENGTH_SHORT).show()
+                } else {
+
+                    viewModel.updateTicket(ticket)
+                    GlobalScope.launch {
+                        val working = Working()
+                        val database = working.dataBase(this@EditActivity)
+                        database.ticketDao().update(ticket)
+                    }
+                    finish()
+                }
 
             }
         })
