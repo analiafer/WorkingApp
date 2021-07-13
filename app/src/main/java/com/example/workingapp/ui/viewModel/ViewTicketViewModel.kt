@@ -6,7 +6,7 @@ import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.data.TicketsRepository
 import com.example.workingapp.model.Ticket
 
-//Esta clase es el ViewModel del ViewTicket pero por ahora no funciona y no sabemos la razón, así que usamos la general.
+
 class ViewTicketViewModel (private val repository: TicketsRepository) : ViewModel(){
 
         val ticket = MutableLiveData<TicketEntity>()

@@ -47,4 +47,7 @@
     <string name="v_viento">18.5km</string>
     <string name="toastInfoVacia"> Complete todos los campos por favor!</string>
     <string name="optionBackTicket">Atras</string>
+    <string name="dia">Dia</string>
+    <string name="fecha">12/07/2021</string>
+    <string name="pronostico">Pronostico de 5 dias</string>
 </resources>

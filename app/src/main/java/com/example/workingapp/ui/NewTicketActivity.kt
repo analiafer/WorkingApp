@@ -6,10 +6,11 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.workingapp.R
 import com.example.workingapp.databinding.ActivityNewTicketBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class NewTicketActivity : AppCompatActivity() {
     private lateinit var bindingNewTicket : ActivityNewTicketBinding
-    private val vm: TicketViewModel by viewModels()
+    private val vm: AddTicketViewModel by viewModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

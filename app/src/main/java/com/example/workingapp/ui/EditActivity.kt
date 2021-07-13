@@ -6,15 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.workingapp.Working
 import com.example.workingapp.data.AppDatabase
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
 import java.text.SimpleDateFormat
 import java.util.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class EditActivity : AppCompatActivity() {
-    private val viewModel: TicketViewModel by viewModels()
+    private val viewModel: TicketViewModel by viewModel()
     private lateinit var bindingEditTicket: ActivityEditBinding
     private var idUpTicket: Long = 0
 
