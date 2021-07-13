@@ -14,20 +14,32 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
             titulo = ticket.titulo,
             autor = ticket.autor,
             descripcion = ticket.descripcion,
-            fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())
+            fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
+            estado = ticket.estado
         )
         dao.save(entity)
     }
 
     override suspend fun getAll(): List<Ticket> {
         return dao.getAll().map {
-            Ticket(
-                id = it.id,
-                titulo = it.titulo,
-                autor = it.autor,
-                descripcion = it.descripcion,
-                fechahora = it.fechahora
-            )
+            Ticket(id = it.id,
+                   titulo = it.titulo,
+                   autor = it.autor,
+                   descripcion = it.descripcion,
+                   fechahora = it.fechahora,
+                   estado = it.estado)
+        }
+    }
+
+    override suspend fun getByEstado(estado : String): List<Ticket> {
+        return dao.getByEstado(estado).map {
+            Ticket(id = it.id,
+                   titulo = it.titulo,
+                    autor = it.autor,
+                    descripcion = it.descripcion,
+                    fechahora = it.fechahora,
+                    estado = it.estado)
+
         }
     }
 
@@ -45,8 +57,11 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
             titulo = ticket.titulo,
             autor = ticket.autor,
             descripcion = ticket.descripcion,
-            fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date())
+            fechahora = SimpleDateFormat("dd.MM.yyyy HH:mm").format(Date()),
+            estado = ticket.estado
         )
         dao.update(entity)
     }
+
+
 }

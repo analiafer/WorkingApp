@@ -11,7 +11,6 @@ import com.example.workingapp.databinding.ActivityViewTicketBinding
 import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
-
 class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
     private val viewModel: ViewTicketViewModel by viewModel()

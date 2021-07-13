@@ -23,7 +23,6 @@
     <string name="ejemplo_descripcion_ticket">Descripción del ticket</string>
     <string name="clima">Clima</string>
     <string name="realizados">Realizados</string>
-    <string name="en_proceso">En proceso</string>
     <string name="cancelados">Cancelados</string>
     <string name="general">General</string>
     <string name="ciudad">Ciudad</string>
@@ -50,4 +49,12 @@
     <string name="dia">Dia</string>
     <string name="fecha">12/07/2021</string>
     <string name="pronostico">Pronostico de 5 dias</string>
+    <string name="escriba_el_autor">Escriba el Autor</string>
+    <string name="escriba_el_titulo">Escriba el Titulo</string>
+    <string name="escriba_una_descripcion">Escriba una descripcion</string>
+    <string name="guardar">Guardar</string>
+    <string name="estado_ticket">Estado:</string>
+    <string name="realizado">Realizado</string>
+    <string name="en_proceso">En proceso</string>
+    <string name="cancelado">Cancelado</string>
 </resources>

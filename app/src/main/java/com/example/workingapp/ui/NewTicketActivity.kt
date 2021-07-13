@@ -11,7 +11,8 @@ import com.example.workingapp.ui.viewModel.NewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class NewTicketActivity : AppCompatActivity() {
-    private lateinit var bindingNewTicket: ActivityNewTicketBinding
+
+    private lateinit var bindingNewTicket : ActivityNewTicketBinding
     private val vm: NewTicketViewModel by viewModel()
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")

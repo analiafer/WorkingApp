@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,59 +26,111 @@
 
     <EditText
         android:id="@+id/etTitulo"
-        android:layout_width="292dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="164dp"
-        android:background="?attr/cajadetexto"
-        android:hint="Escriba el Titulo"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/texthint"
+        android:layout_width="352dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="76dp"
+        android:autofillHints=""
+        android:background="#65D0D8D0"
+        android:hint="@string/escriba_el_titulo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etAutor"
-        android:layout_width="293dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="232dp"
-        android:background="?attr/cajadetexto"
-
-        android:hint="Escriba el Autor"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/texthint"
+        android:layout_width="352dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="148dp"
+        android:background="#65D0D8D0"
+        android:hint="@string/escriba_el_autor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <EditText
         android:id="@+id/etDescripcion"
-        android:layout_width="294dp"
+        android:layout_width="352dp"
         android:layout_height="181dp"
-        android:layout_marginTop="312dp"
-        android:background="?attr/cajadetexto"
+        android:layout_marginTop="220dp"
+        android:background="#65D0D8D0"
         android:gravity="top"
-        android:hint="Escriba una descripcion"
-        android:textColor="?attr/textcolor"
-        android:textColorHint="?attr/texthint"
+        android:hint="@string/escriba_una_descripcion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/opciones_estadoTicket"
+        android:layout_width="65dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="188dp"
+        android:text="@string/estado_ticket"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescripcion"
+        app:layout_constraintVertical_bias="0.438" />
+
+    <RadioGroup
+        android:layout_width="339dp"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditarAceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opciones_estadoTicket"
+        app:layout_constraintVertical_bias="0.741">
+
+        <RadioButton
+            android:id="@+id/ticketRealizado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/realizado"
+            tools:ignore="OnClick"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="513dp" />
+
+        <RadioButton
+            android:id="@+id/ticket_enProceso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/en_proceso"
+            tools:ignore="OnClick"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="513dp" />
+
+        <RadioButton
+            android:id="@+id/ticket_cancelado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/cancelado"
+            tools:ignore="OnClick"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="513dp" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btnEditarAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
-        app:backgroundTint="?attr/buttoncolor"
+        android:text="@string/guardar"
+        app:backgroundTint="#2180F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcion"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.758" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

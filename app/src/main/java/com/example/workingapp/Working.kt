@@ -27,6 +27,9 @@ class Working : Application() {
         viewModel { NewTicketViewModel(get()) }
         viewModel { ViewTicketViewModel(get()) }
         viewModel { EditActivityViewModel(get()) }
+        viewModel { DoneViewModel(get()) }
+        viewModel { CancelViewModel(get())}
+        viewModel { EnProcesoViewModel(get()) }
 
 
     }
@@ -46,7 +49,7 @@ class Working : Application() {
          return Room.databaseBuilder(
              context,
              AppDatabase::class.java,
-             "workingApplication"
+             "appWorking"
          )
              .allowMainThreadQueries()
              .build()
