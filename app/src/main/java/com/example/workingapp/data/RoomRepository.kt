@@ -39,7 +39,7 @@ class RoomRepository(private val dao: TicketDao) : TicketsRepository {
     }
 
     @SuppressLint("SimpleDateFormat")
-    override fun update(ticket: TicketEntity) {
+    override suspend fun update(ticket: TicketEntity) {
         val entity = TicketEntity(
             titulo = ticket.titulo,
             autor = ticket.autor,

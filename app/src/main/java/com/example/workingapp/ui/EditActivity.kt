@@ -1,5 +1,7 @@
 package com.example.workingapp.ui
 import android.annotation.SuppressLint
+import android.app.Application
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,13 +11,19 @@ import com.example.workingapp.Working
 import com.example.workingapp.data.AppDatabase
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.databinding.ActivityEditBinding
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.Dispatcher
 import java.text.SimpleDateFormat
 import java.util.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.ext.scope
 
 
 class EditActivity : AppCompatActivity() {
-    private val viewModel: TicketViewModel by viewModel()
+    private val viewModel: EditActivityViewModel by viewModel()
     private lateinit var bindingEditTicket: ActivityEditBinding
     private var idUpTicket: Long = 0
 
@@ -53,9 +61,12 @@ class EditActivity : AppCompatActivity() {
                 viewModel.updateTicket(ticket)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                var working = Working()
-                val database = working.dataBase(this)
-                database.ticketDao().update(ticket)
+                GlobalScope.launch {
+                    var working = Working()
+                    val database = working.dataBase(this@EditActivity)
+                    database.ticketDao().update(ticket)
+                }
+
 
             }
 
