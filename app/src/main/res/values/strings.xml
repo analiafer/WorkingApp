@@ -58,4 +58,17 @@
     <string name="en_proceso">En proceso</string>
     <string name="cancelado">Cancelado</string>
     <string name="modo_oscuro_claro">Modo oscuro/Claro</string>
+    <string name="nombre_de_la_aplicacion">Working App</string>
+    <string name="icono_de_la_aplicacion">icono_app</string>
+    <string name="email">Email</string>
+    <string name="ingrese_aqui_su_email">Ingrese aqui su email</string>
+    <string name="password">Contraseña</string>
+    <string name="ingrese_aqui_su_contrasenia">Ingrese aqui su contraseña</string>
+    <string name="si_no_tenes_cuenta">Si no tenes cuenta</string>
+    <string name="registrate">Registrate</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="nombreDeUsuario">Nombre</string>
+    <string name="ingrese_aqui_su_nombre">Ingrese aqui su nombre</string>
+    <string name="supervisor">Supervisor</string>
+    <string name="empleado">Empleado</string>
 </resources>
