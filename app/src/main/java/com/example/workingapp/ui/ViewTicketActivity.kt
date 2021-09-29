@@ -67,8 +67,16 @@ private fun QR1(){
        codeScanner.IsAutoFocusEnabled=true
        codeScanner.IsFlashEnabled=false
        CodeScanner.decodeCallBack=decodeCallBack{
-
+       runOnUiThread{
+       Toast.MakeText(this,"scan result: $(it.text)", Toast.LENGHT_LONG)
        }
+       }
+       CodeScanner.errorCallback={
+        runOnUiThread{
+        Toast.makeText(this,"camera Error:$(it.text)",Toast.LENGHT_LONG).show()
+        }
+       }
+       codeScanner.startPreview()
        new IntentIntegrator(activity.this).initiateScan();
        IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
        datos= result.getContents()
