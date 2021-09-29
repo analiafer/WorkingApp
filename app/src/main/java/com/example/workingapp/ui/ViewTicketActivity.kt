@@ -17,7 +17,8 @@ class ViewTicketActivity : AppCompatActivity() {
     private var idTicket: Long = 0
     private button button2;
     private string datos;
-
+    private lateint var detector : qrcodeDetector
+    private lateint codeScanner: CodeScanner
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
 
@@ -53,7 +54,14 @@ class ViewTicketActivity : AppCompatActivity() {
     }
 private fun QR1(){
        //funcion para que escanee el codigo qr
+
        Button2= findViewById(R.id.Button2)
+       codeScanner= CodeScanner(this,Button2)
+       codeScanner.camera=CodeScanner.CAMERA_BACK
+       codeScanner.formats= CodeScanner.ALL_FORMATS
+       codeScanner.autoFocusMode=autoFocusMode.SAFE
+       codeScanner.ScanMode= ScanMode.SINGLE
+
        new IntentIntegrator(activity.this).initiateScan();
        IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
        datos= result.getContents()
