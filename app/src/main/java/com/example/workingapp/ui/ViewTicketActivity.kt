@@ -15,6 +15,8 @@ class ViewTicketActivity : AppCompatActivity() {
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
     private val viewModel: ViewTicketViewModel by viewModel()
     private var idTicket: Long = 0
+    private button button2;
+    private string datos;
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
@@ -49,7 +51,14 @@ class ViewTicketActivity : AppCompatActivity() {
             bindingViewTicket.textDateTicket.text = it.fechahora
         })
     }
-
+private fun QR1(){
+       //funcion para que escanee el codigo qr
+       Button2= findViewById(R.id.Button2)
+       new IntentIntegrator(activity.this).initiateScan();
+       IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
+       datos= result.getContents()
+       Button2.setText(datos);
+}
     //función que se encarga del comportamiento de los botones de la barra.
 //Uno borra el ticket, el otro vuelve atrás.
     private fun setListener() {
@@ -61,7 +70,6 @@ class ViewTicketActivity : AppCompatActivity() {
             } else finish()
             super.onOptionsItemSelected(item)
         }
-
         bindingViewTicket.btnEditTicket.setOnClickListener() {
             val intentEdit = Intent(this, EditActivity::class.java)
             intentEdit.putExtra("IdTicketEdit", idTicket)

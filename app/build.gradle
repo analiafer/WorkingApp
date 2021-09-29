@@ -82,6 +82,9 @@ dependencies {
     implementation "org.koin:koin-android-viewmodel:$koin"
     testImplementation "org.koin:koin-test:$koin"
 
+//Escaner QR
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0'
+    implementation 'com.google.zxing:core:3.3.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
