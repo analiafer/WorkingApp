@@ -21,7 +21,7 @@ class ViewTicketActivity : AppCompatActivity() {
     private lateint codeScanner: CodeScanner
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
-
+    private lateint var button : Button
     override fun onCreate(savedInstanceState: Bundle?) {
 
         sharedpref = SharedPref(this)
@@ -52,6 +52,9 @@ class ViewTicketActivity : AppCompatActivity() {
             bindingViewTicket.textDateTicket.text = it.fechahora
         })
     }
+    private fun getView{
+    Button = bindingViewTicket.button2
+    }
 private fun QR1(){
        //funcion para que escanee el codigo qr
 
@@ -61,7 +64,11 @@ private fun QR1(){
        codeScanner.formats= CodeScanner.ALL_FORMATS
        codeScanner.autoFocusMode=autoFocusMode.SAFE
        codeScanner.ScanMode= ScanMode.SINGLE
+       codeScanner.IsAutoFocusEnabled=true
+       codeScanner.IsFlashEnabled=false
+       CodeScanner.decodeCallBack=decodeCallBack{
 
+       }
        new IntentIntegrator(activity.this).initiateScan();
        IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
        datos= result.getContents()
