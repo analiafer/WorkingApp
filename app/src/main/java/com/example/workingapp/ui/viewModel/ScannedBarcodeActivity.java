@@ -71,7 +71,7 @@ public class ScannedBarcodeActivity<BarcodeDetector> extends AppCompatActivity {
                     .setBarcodeFormats(Barcode.ALL_FORMATS)
                     .build();
 
-            cameraSource = new CameraSource.Builder(this, barcodeDetector)
+            cameraSource = new CameraSource.Builder(this, (Detector<?>) barcodeDetector)
                     .setRequestedPreviewSize(1920, 1080)
                     .setAutoFocusEnabled(true) //you should add this feature
                     .build();
