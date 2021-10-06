@@ -15,6 +15,10 @@ import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class ViewTicketActivity : AppCompatActivity() {
+    private val MainActivity: String?
+        get() {
+            TODO()
+        }
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
     private val viewModel: ViewTicketViewModel by viewModel()
     private var idTicket: Long = 0
@@ -47,8 +51,9 @@ class ViewTicketActivity : AppCompatActivity() {
         var btnScanBarcode = findViewById(R.id.btnScanBarcode);
 
         btnScanBarcode.setOnClickListener(View.OnClickListener() {
-             fun onClick(any: View view) {
-                startActivity(Intent(MainActivity.this, ScannedBarcodeActivity.class)view)
+             fun onClick(any: View: view) {
+                startActivity(Intent(this.MainActivity, ScannedBarcodeActivity.class);
+
             }
         });
     }
