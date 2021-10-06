@@ -83,6 +83,11 @@ class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener{
                 R.id.option_cancel -> {
                     true
                 }
+
+                R.id.option_user -> {
+                    optionUser()
+                    true
+                }
                 else -> {
                     super.onOptionsItemSelected(item)
                 }
@@ -90,6 +95,10 @@ class CancelActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener{
 
         }
 
+    }
+    private fun optionUser(){
+        val user = Intent (this, UserActivity::class.java)
+        startActivity(user)
     }
 
     private fun optionGeneral() {

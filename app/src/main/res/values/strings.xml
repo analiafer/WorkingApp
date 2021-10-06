@@ -71,4 +71,9 @@
     <string name="ingrese_aqui_su_nombre">Ingrese aqui su nombre</string>
     <string name="supervisor">Supervisor</string>
     <string name="empleado">Empleado</string>
+    <string name="user">Usuario</string>
+    <string name="userimage">userImage</string>
+    <string name="nombreUsuario">nombreUsuario</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="nombre_de_usuario_no_encontrado">Nombre de usuario no encontrado</string>
 </resources>

@@ -75,12 +75,21 @@ class DoneActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
                     optionCancel()
                     true
                 }
+                R.id.option_user -> {
+                    optionUser()
+                    true
+                }
                 else -> {
                     super.onOptionsItemSelected(item)
                 }
             }
 
         }
+    }
+
+    private fun optionUser(){
+        val user = Intent (this, UserActivity::class.java)
+        startActivity(user)
     }
 
     private fun optionGeneral() {

@@ -17,7 +17,12 @@
         <activity
             android:name=".ui.SignUpActivity"/>
         <activity
+            android:name=".ui.LogInActivity"/>
+        <activity
             android:name=".ui.MainActivity"/>
+        <activity
+            android:name=".ui.UserActivity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.PronosticoActivity"
             android:parentActivityName=".ui.ClimaActivity" />
@@ -42,7 +47,7 @@
         <activity
             android:name=".ui.ViewTicketActivity"
             android:parentActivityName=".ui.MainActivity" />
-        <activity android:name=".ui.LogInActivity"
+        <activity android:name=".ui.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

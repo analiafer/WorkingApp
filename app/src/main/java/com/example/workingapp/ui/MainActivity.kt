@@ -104,6 +104,10 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
                     optionCancel()
                     true
                 }
+                R.id.option_user -> {
+                    optionUser()
+                    true
+                }
                 else -> {
                     super.onOptionsItemSelected(item)
                 }
@@ -132,6 +136,11 @@ class MainActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListener {
         val cancel = Intent(this, CancelActivity::class.java)
         startActivity(cancel)
 
+    }
+
+    private fun optionUser(){
+        val user = Intent (this, UserActivity::class.java)
+        startActivity(user)
     }
 
     //Setup del recyclerView
