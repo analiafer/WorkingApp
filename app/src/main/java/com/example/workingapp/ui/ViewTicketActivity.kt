@@ -18,20 +18,7 @@ class ViewTicketActivity : AppCompatActivity() {
     private var idTicket: Long = 0
 
     Button  btnScanBarcode;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btnScanBarcode = findViewById(R.id.btnScanBarcode);
 
-        btnScanBarcode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ScannedBarcodeActivity.class));
-            }
-        });
-    }
-}
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
@@ -55,6 +42,15 @@ class ViewTicketActivity : AppCompatActivity() {
         viewModel.getById(idTicket)
         setObserver()
         setListener()
+        setContentView(R.layout.activity_main);
+        btnScanBarcode = findViewById(R.id.btnScanBarcode);
+
+        btnScanBarcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ScannedBarcodeActivity.class));
+            }
+        });
     }
 
     //función que setea los datos en la base de datos con los elementos del activity.
