@@ -25,7 +25,7 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.IOException;
-public class ScannedBarcodeActivity<BarcodeDetector> extends AppCompatActivity {
+public class ScannedBarcodeActivity<BarcodeDetector, Barcode> extends AppCompatActivity {
 
 
 
@@ -103,7 +103,7 @@ public class ScannedBarcodeActivity<BarcodeDetector> extends AppCompatActivity {
             });
 
 
-            barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
+            ((Detector<?>) barcodeDetector).setProcessor(new Detector.Processor<Barcode>() {
 
                 public void release() {
                     Toast.makeText(getApplicationContext(), "To prevent memory leaks barcode scanner has been stopped", Toast.LENGTH_SHORT).show();
