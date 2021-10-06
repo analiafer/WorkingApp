@@ -45,13 +45,14 @@ class ViewTicketActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main);
         btnScanBarcode = findViewById(R.id.btnScanBarcode);
 
-        btnScanBarcode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnScanBarcode.setOnClickListener(View.OnClickListener() {
+             fun onClick(any: View view) {
                 startActivity(new Intent(MainActivity.this, ScannedBarcodeActivity.class));
             }
         });
     }
+
+
 
     //función que setea los datos en la base de datos con los elementos del activity.
     private fun setObserver() {
