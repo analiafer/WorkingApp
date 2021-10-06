@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import com.example.workingapp.ui.viewModel.ScannedBarcodeActivity
 import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -17,7 +19,6 @@ class ViewTicketActivity : AppCompatActivity() {
     private val viewModel: ViewTicketViewModel by viewModel()
     private var idTicket: Long = 0
 
-    Button  btnScanBarcode;
 
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -43,11 +44,11 @@ class ViewTicketActivity : AppCompatActivity() {
         setObserver()
         setListener()
         setContentView(R.layout.activity_main);
-        btnScanBarcode = findViewById(R.id.btnScanBarcode);
+        var btnScanBarcode = findViewById(R.id.btnScanBarcode);
 
         btnScanBarcode.setOnClickListener(View.OnClickListener() {
              fun onClick(any: View view) {
-                startActivity(new Intent(MainActivity.this, ScannedBarcodeActivity.class));
+                startActivity(Intent(MainActivity.this, ScannedBarcodeActivity.class)view)
             }
         });
     }
