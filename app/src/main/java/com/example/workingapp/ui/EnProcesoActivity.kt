@@ -75,6 +75,11 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
                     optionCancel()
                     true
                 }
+
+                R.id.option_user -> {
+                    optionUser()
+                    true
+                }
                 else -> {
                     super.onOptionsItemSelected(item)
                 }
@@ -103,6 +108,10 @@ class EnProcesoActivity : AppCompatActivity(), TicketAdapter.OnTicketClickListen
         finish()
     }
 
+    private fun optionUser(){
+        val user = Intent (this, UserActivity::class.java)
+        startActivity(user)
+    }
 
     private fun setupRecycler(){
         ticketAdapter = TicketAdapter(this)

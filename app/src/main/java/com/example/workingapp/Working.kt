@@ -7,6 +7,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.workingapp.data.*
 import com.example.workingapp.data.service.DataSource
+import com.example.workingapp.ui.UserActivity
 import com.example.workingapp.ui.viewModel.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -37,6 +38,7 @@ class Working : Application() {
         viewModel { EnProcesoViewModel(get()) }
         viewModel { LogInViewModel(get(), get())}
         viewModel { SignUpViewModel(get(), get())}
+        viewModel { UserViewModel(get(), get()) }
     }
 
     override fun onCreate(){
