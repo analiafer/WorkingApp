@@ -91,7 +91,7 @@ public class ScannedBarcodeActivity<BarcodeDetector> extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-
+//comentario
                 @Override
                 public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
                 }
