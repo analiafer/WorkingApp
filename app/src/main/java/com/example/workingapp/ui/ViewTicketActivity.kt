@@ -52,7 +52,8 @@ class ViewTicketActivity : AppCompatActivity() {
 
         btnScanBarcode.setOnClickListener(View.OnClickListener() {
              fun onClick() {
-                startActivity(Intent(this.MainActivity, ScannedBarcodeActivity.class);
+                startActivity((this.intent.View));
+                 //this.MainActivity, ScannedBarcodeActivity.class
             }
         });
     }
