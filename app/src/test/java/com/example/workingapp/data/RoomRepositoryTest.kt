@@ -4,6 +4,7 @@ import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import junit.framework.TestCase.assertEquals
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
@@ -19,6 +20,7 @@ class RoomRepositoryTest {
     fun setUp() = MockKAnnotations.init(this, relaxUnitFun = true)
 
 
+    @ExperimentalCoroutinesApi
     @Test
     fun roomRepoTest(){
         runBlockingTest {
