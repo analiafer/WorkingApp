@@ -1,13 +1,18 @@
 package com.example.workingapp.ui
 
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.observe
 import com.example.workingapp.R
 import com.example.workingapp.data.SharedPref
@@ -18,12 +23,16 @@ import org.koin.android.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
+private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
 
 class ClimaActivity : AppCompatActivity() {
 
     private lateinit var bindingClima: ActivityClimaBinding
     private val viewModelClima: ClimaViewModel by viewModel()
     private lateinit var clima: WeatherList
+
+    private lateinit var permissionLauncher: ActivityResultLauncher<Array<String>>
+
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
@@ -53,7 +62,9 @@ class ClimaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        initObserver()
+
+        createPermissionsLauncher()
+
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -76,4 +87,34 @@ class ClimaActivity : AppCompatActivity() {
             }
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    private fun createPermissionsLauncher() {
+        permissionLauncher =
+                registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+                    if (permissions[Manifest.permission.ACCESS_FINE_LOCATION] == true) {
+                        initObserver()
+                    } else {
+                        Toast.makeText(
+                                this,
+                                "Se necesitan los permisos para la ubicación",
+                                Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+    }
+
+    private fun arePermissionsGranted(): Boolean {
+        return REQUIRED_PERMISSIONS.all {
+            ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
+        }
+    }
+
+    private fun askForPermissions() {
+        permissionLauncher.launch(REQUIRED_PERMISSIONS)
+    }
+
+   
+
+
 }

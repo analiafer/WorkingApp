@@ -5,6 +5,6 @@ import retrofit2.Response
 
 interface  RepositorioClima{
 
-    suspend fun getWeather(city: String) : Response<WeatherModel>
+    suspend fun getWeather(lat: String, long: String) : Response<WeatherModel>
 
 }

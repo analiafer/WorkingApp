@@ -11,7 +11,8 @@ interface climaAPI {
 
     @GET("forecast")
     suspend fun getCurrentWeatherData
-                (@Query("q") city: String,
+                (@Query("lat") lat : String,
+                 @Query("lon") lon : String,
                  @Query("appid") access_key: String = "c0d4c0df755521b2be43fd8bf65f2791",
                  @Query("lang") lang:String = "es",
                  @Query("units") units: String = "metric")

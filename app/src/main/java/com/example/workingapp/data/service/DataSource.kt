@@ -5,8 +5,8 @@ import retrofit2.Response
 
 class DataSource {
 
-    suspend fun getWeather(ciudad: String): Response<WeatherModel> {
-        return API.service.getCurrentWeatherData(ciudad)
+    suspend fun getWeather(lat: String, lon : String): Response<WeatherModel> {
+        return API.service.getCurrentWeatherData(lat, lon)
     }
 
 }

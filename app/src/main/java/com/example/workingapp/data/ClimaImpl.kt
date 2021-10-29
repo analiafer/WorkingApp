@@ -6,8 +6,8 @@ import retrofit2.Response
 
 class ClimaImpl (private val data: DataSource) : RepositorioClima {
 
-    override suspend fun getWeather(city: String): Response<WeatherModel> {
-       return data.getWeather(city)
+    override suspend fun getWeather(lat: String, lon : String): Response<WeatherModel> {
+       return data.getWeather(lat, lon)
     }
 
 }
