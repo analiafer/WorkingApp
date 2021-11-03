@@ -3,20 +3,29 @@ package com.example.workingapp.ui
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.workingapp.R
 import com.example.workingapp.data.SharedPref
 import com.example.workingapp.databinding.ActivityViewTicketBinding
+import com.example.workingapp.ui.viewModel.ScannedBarcodeActivity
 import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class ViewTicketActivity : AppCompatActivity() {
+    private val MainActivity: String?
+        get() {
+            TODO()
+        }
     private lateinit var bindingViewTicket: ActivityViewTicketBinding
     private val viewModel: ViewTicketViewModel by viewModel()
     private var idTicket: Long = 0
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
+
+
+@SuppressLint("UseSwitchCompatOrMaterialCode")
     internal lateinit var sharedpref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +47,18 @@ class ViewTicketActivity : AppCompatActivity() {
         viewModel.getById(idTicket)
         setObserver()
         setListener()
+        setContentView(R.layout.activity_main);
+        var btnScanBarcode = findViewById(R.id.btnScanBarcode);
+
+        btnScanBarcode.setOnClickListener(View.OnClickListener() {
+             fun onClick() {
+                startActivity((this.intent.View));
+                 //this.MainActivity, ScannedBarcodeActivity.class
+            }
+        });
     }
+
+
 
     //función que setea los datos en la base de datos con los elementos del activity.
     private fun setObserver() {
