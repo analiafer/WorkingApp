@@ -4,22 +4,23 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.workingapp.CoroutineTestRule
 import com.example.workingapp.data.TicketEntity
 import com.example.workingapp.data.TicketsRepository
+import com.example.workingapp.model.Ticket
 import com.example.workingapp.ui.viewModel.NewTicketViewModel
-import com.example.workingapp.ui.viewModel.TicketViewModel
+import com.example.workingapp.ui.viewModel.ViewTicketViewModel
 import io.mockk.MockKAnnotations
-import io.mockk.*
 import io.mockk.coEvery
 import io.mockk.coJustRun
+import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK
-import org.junit.Assert.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class TicketViewModelTest {
-    lateinit var instance: NewTicketViewModel
+class DeleteTicketViewModel {
+
+    lateinit var instance: ViewTicketViewModel
 
     @MockK
     lateinit var repo: TicketsRepository
@@ -45,14 +46,13 @@ class TicketViewModelTest {
             coEvery {
                 repo.getAll()
             } returns listOf()
-            instance = NewTicketViewModel(repo)
-            instance.saveTicket("Ticket de prueba", "Analia", "Este es un ticket de prueba")
+            instance = ViewTicketViewModel(repo)
+            val ticket = TicketEntity(1,"Ticket de prueba", "Analia", "Este es un ticket de prueba","30/10/2021", "cancelado")
+            instance.delete(ticket)
             coVerify(exactly = 1) { repo.save(any()) }
 
         }
     }
-
-
 
 
 }
