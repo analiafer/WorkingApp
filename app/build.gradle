@@ -69,6 +69,8 @@ dependencies {
 
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    implementation 'androidx.camera:camera-core:1.1.0-alpha03'
+    implementation 'com.google.android.gms:play-services-mlkit-barcode-scanning:16.2.1'
 
     //Room
     def room_version = "2.2.5"
@@ -81,9 +83,17 @@ dependencies {
     implementation "org.koin:koin-android:$koin"
     implementation "org.koin:koin-android-viewmodel:$koin"
     testImplementation "org.koin:koin-test:$koin"
+    //Ubicacion
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
 
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+compileKotlin {
+    kotlinOptions {
+        languageVersion = "1.4"
+    }
 }
